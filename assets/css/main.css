@@ -1112,6 +1112,7 @@ input, select, textarea {
 		-ms-transform: scale(1.0);
 		transform: scale(1.0);
 		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -1131,18 +1132,21 @@ input, select, textarea {
 		}
 
 		#bg:before {
-			-moz-transition: background-color 2.5s ease-in-out;
-			-webkit-transition: background-color 2.5s ease-in-out;
-			-ms-transition: background-color 2.5s ease-in-out;
-			transition: background-color 2.5s ease-in-out;
-			-moz-transition-delay: 0.75s;
-			-webkit-transition-delay: 0.75s;
-			-ms-transition-delay: 0.75s;
-			transition-delay: 0.75s;
+			-moz-transition: background-color 0.5s ease-in-out;
+			-webkit-transition: background-color 0.5s ease-in-out;
+			-ms-transition: background-color 0.5s ease-in-out;
+			transition: background-color 0.5s ease-in-out;
+			-moz-transition-delay: 0.1s;
+			-webkit-transition-delay: 0.1s;
+			-ms-transition-delay: 0.1s;
+			transition-delay: 0.1s;
 			background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("../../images/overlay.png");
-			background-size: auto, 256px 256px;
-			background-position: center, center;
-			background-repeat: no-repeat, repeat;
+			background-size: auto,
+ 256px 256px;
+			background-position: center,
+ center;
+			background-repeat: no-repeat,
+ repeat;
 			z-index: 2;
 		}
 
@@ -1155,7 +1159,7 @@ input, select, textarea {
 			-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
 			-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
 			transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
-			background-image: url("../../images/bg.jpg");
+			background-image: url("../../images/bgwhite.jpg");
 			background-position: center;
 			background-size: cover;
 			background-repeat: no-repeat;
@@ -1251,10 +1255,7 @@ input, select, textarea {
 		-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
 		-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
 		transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
-		background-image: -moz-radial-gradient(rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 0) 55%);
-		background-image: -webkit-radial-gradient(rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 0) 55%);
-		background-image: -ms-radial-gradient(rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 0) 55%);
-		background-image: radial-gradient(rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 0) 55%);
+		background: none;
 		max-width: 100%;
 		text-align: center;
 	}
@@ -1634,12 +1635,35 @@ input, select, textarea {
 	}
 
 		#footer .copyright {
-			letter-spacing: 0.2rem;
-			font-size: 0.6rem;
-			opacity: 0.75;
-			margin-bottom: 0;
-			text-transform: uppercase;
-		}
+	letter-spacing: 0.2rem;
+	font-size: 0.8rem;
+	opacity: 0.75;
+	margin-bottom: 0;
+	text-transform: uppercase;
+}
+
+/* Hide contact elements */
+#contact {
+	display: none !important;
+}
+
+/* Hide the entire contact list item to fix navigation spacing */
+#header nav ul li:nth-child(4) {
+	display: none !important;
+}
+
+/* Remove only the internal division lines between navigation buttons */
+#header nav ul li {
+	border-left: none !important;
+	border-right: none !important;
+	border-top: none !important;
+	border-bottom: none !important;
+}
+
+/* Remove the center line from navigation */
+#header nav.use-middle:after {
+	display: none !important;
+}
 
 		body.is-article-visible #footer {
 			-moz-transform: scale(0.95);
@@ -1656,3 +1680,65 @@ input, select, textarea {
 		body.is-preload #footer {
 			opacity: 0;
 		}
+
+/* Custom logo styling for images */
+#header .logo {
+	border: none !important;
+	border-radius: 0 !important;
+	background: none !important;
+}
+
+#header .content {
+	border-style: solid;
+	border-color: #ffffff;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	max-width: 100%;
+}
+
+#header > *:before {
+	display: none !important;
+}
+
+/* Intro article styling */
+#intro h2.major {
+	text-align: center !important;
+	width: 100% !important;
+}
+
+#intro p {
+	text-align: justify;
+}
+
+/* Header logo styling */
+.header-logo {
+	max-width: 20rem;
+	max-height: 8rem;
+	display: block;
+	margin: 0 auto 1rem auto;
+}
+
+#header .logo img {
+	border: none;
+	border-radius: 0;
+	width: auto;
+	height: auto;
+	max-width: 24rem;
+	max-height: 24rem;
+	display: block;
+	margin: -4rem auto 0 -9rem;
+}
+
+@media screen and (max-width: 736px) {
+	#header .logo img {
+		max-width: 20rem;
+		max-height: 20rem;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	#header .logo img {
+		max-width: 16rem;
+		max-height: 16rem;
+	}
+}
