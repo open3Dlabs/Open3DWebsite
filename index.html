@@ -1,350 +1,117 @@
-<!DOCTYPE HTML>
-<!--
-	blablabla
--->
-<html>
-	<head>
-		<title>OPEN 3D LABORATORIES</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O3D-BRIDGE | Retro sci-fi dashboard for your Mac</title>
+<meta name="description" content="O3D-BRIDGE is a free retro sci-fi dashboard for macOS by Open3D Laboratories: time, weather, air quality, exchange rates, border waits, beach water quality and live system stats.">
+<style>
+:root{--a:#00ff41}
+*{box-sizing:border-box}
+html,body{margin:0;background:#000;color:var(--a);font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}
+body{min-height:100vh;padding:24px 16px;background:radial-gradient(ellipse at top,rgba(0,255,65,.06),#000 60%)}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 1px,transparent 1px 3px)}
+.w{max-width:860px;margin:0 auto}
+nav{display:flex;justify-content:space-between;font-size:12px;letter-spacing:.1em;border-bottom:1px solid rgba(0,255,65,.4);padding-bottom:10px}
+a{color:var(--a)}
+h1{font-size:clamp(26px,6vw,46px);letter-spacing:.18em;margin:48px 0 8px;text-shadow:0 0 12px var(--a);text-align:center}
+.tag{font-size:16px;line-height:1.6;color:rgba(0,255,65,.8);max-width:640px;margin-left:auto;margin-right:auto;text-align:center}
+.cta{margin:32px 0 8px;text-align:center}
+.btn{display:inline-block;border:1px solid var(--a);padding:16px 28px;font-size:18px;letter-spacing:.12em;text-decoration:none;background:rgba(0,255,65,.08);box-shadow:0 0 18px rgba(0,255,65,.3);font-weight:700}
+.btn.alt{font-size:14px;padding:11px 20px;margin-top:6px;box-shadow:none;background:none;font-weight:400}
+.btn:hover{background:rgba(0,255,65,.22)}
+.dim{font-size:12px;color:rgba(0,255,65,.65);line-height:1.7;text-align:center}
+img.shot{width:100%;margin:24px 0;border:1px solid rgba(0,255,65,.4);display:block}
+.g{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-top:36px}
+.p{border:1px solid rgba(0,255,65,.4);background:rgba(0,255,65,.04)}
+.p h2{margin:0;padding:0 14px;height:28px;display:flex;align-items:center;font-size:11px;letter-spacing:.2em;border-bottom:1px solid rgba(0,255,65,.4)}
+.p div{padding:10px 14px;font-size:13px;line-height:1.6;color:rgba(0,255,65,.85)}
+h3{letter-spacing:.15em;font-size:13px;margin:40px 0 8px}
+ol{padding-left:20px;font-size:13px;line-height:1.9;color:rgba(0,255,65,.85);text-align:left;display:inline-block}
+.p.instructions{text-align:center;margin-left:auto;margin-right:auto;max-width:640px}
+.p.instructions div{text-align:center}
+.ov{position:fixed;inset:0;z-index:10;background:rgba(0,0,0,.8);display:none;align-items:center;justify-content:center;padding:16px}
+.ov.on{display:flex}
+.md{max-width:440px;width:100%;border:1px solid var(--a);background:#010a03;box-shadow:0 0 30px rgba(0,255,65,.35)}
+.md h2{margin:0;padding:0 14px;height:30px;display:flex;align-items:center;justify-content:space-between;font-size:11px;letter-spacing:.2em;border-bottom:1px solid rgba(0,255,65,.4)}
+.md h2 button{background:none;border:0;color:var(--a);font:inherit;cursor:pointer;font-size:14px}
+.md .c{padding:22px 20px 20px;text-align:center}
+.md .t{font-size:22px;letter-spacing:.12em;text-shadow:0 0 10px var(--a);margin:0 0 12px;font-weight:700}
+.md p{font-size:13px;line-height:1.7;color:rgba(0,255,65,.85);margin:0 0 18px}
+.md .btn{font-size:15px;padding:12px 20px}
+.md .no{display:block;margin:14px auto 0;background:none;border:0;color:rgba(0,255,65,.6);font:inherit;font-size:12px;cursor:pointer;text-decoration:underline}
+footer{margin-top:48px;border-top:1px solid rgba(0,255,65,.4);padding-top:14px;font-size:11px;color:rgba(0,255,65,.65);text-align:center;line-height:1.8}
+</style>
+</head>
+<body>
+<div class="w">
+<nav><span>OPEN3D LABORATORIES</span><a href="../">&larr; BACK TO SITE</a></nav>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<h1 style="text-align:center">O3D-BRIDGE</h1>
+<img class="shot" src="screenshot.png" alt="O3D-BRIDGE dashboard screenshot" onerror="this.style.display='none'">
 
-				<!-- Header -->
-					<header id="header">
-						<div class="content">
-							<div class="inner">
-								<img src="images/logo.png" alt="OPEN 3D LABORATORIES Logo" class="header-logo" />
-								<p>Engineering and Design Consulting Services</p>
-							</div>
-						</div>
-						<nav>
-							<ul>
-								<li><a href="#intro">Intro</a></li>
-								<li><a href="#work">Work</a></li>
-								<li><a href="#about">About</a></li>
-								<li><a href="#contact">Contact</a></li>
-								<!--<li><a href="#elements">Elements</a></li>-->
-							</ul>
-						</nav>
-					</header>
+<p class="tag" style="text-align:center">A retro sci-fi command console for your Mac. Matrix-green on black, always on in your menu bar, with everything you glance at in one screen.</p>
 
-				<!-- Main -->
-					<div id="main">
+<p class="tag" style="margin-top:14px;text-align:center">Built mostly for people who live on the Mexico and US border, with live border waits, the Tijuana street dollar and beach water quality for Tijuana and San Diego. More borders are coming soon.</p>
+<p class="dim" style="font-size:13px;text-align:center">Version 1.00 &middot; I update it regularly. Found a bug? Email me at <a href="mailto:alex@open3dlaboratories.com">alex@open3Dlaboratories.com</a>.</p>
+<div class="p instructions" style="margin-top:22px"><h2>FIRST LAUNCH ON MAC</h2><div>
+Because this build isn't code-signed yet, macOS will block it on first launch. Cheeseburgers help fund the $99/yr Apple Developer fee to bring it to the App Store and iOS—until then, follow these quick steps once:
+<div style="text-align:center"><ol style="margin:8px 0 0;display:inline-block;text-align:left">
+  <li>Open the downloaded .dmg and drag O3D-BRIDGE into Applications.</li>
+  <li>Open O3D-BRIDGE from Applications. A message will say it can't be opened. Click <b>Done</b>.</li>
+  <li>Open <b>System Settings</b>, then <b>Privacy &amp; Security</b>.</li>
+  <li>Scroll down to <b>Security</b>. You'll see "O3D-BRIDGE was blocked". Click <b>Open Anyway</b>.</li>
+  <li>Enter your password or use Touch ID, then click <b>Open Anyway</b> once more.</li>
+  <li>Look for O3D-BRIDGE in your menu bar. Click the icon to show the window.</li>
+</ol></div></div></div>
+<div class="cta" style="text-align:center">
+  <a class="btn" id="dl" href="https://github.com/open3Dlabs/Open3DWebsite/releases/download/v1/O3D-BRIDGE.dmg">&darr; DOWNLOAD FOR MAC</a>
+  <p class="dim" style="text-align:center">Free &middot; Tested on macOS Tahoe &middot; Apple Silicon</p>
+  <a class="btn alt" href="https://paypal.me/open3Dlabs" target="_blank" rel="noopener">&#127828; BUY ME A CHEESEBURGER</a>
+</div>
 
-						<!-- Intro -->
-							<article id="intro">
-								<h2 class="major">Thoughts Become Things <img src="images/magic-wand.png" alt="Magic Wand Icon" class="title-icon" /></h2>
-								<p>Hi, I'm Alex, a Mechatronics Engineer with a passion for turning ideas into reality. With expertise in manufacturing and project management, I help bring your concepts to life through innovative design, prototyping, and production.</p>
-								
-								<p>When I'm not engineering solutions, you'll find me creating music, experimenting with concrete art, crafting jewelry, or exploring new technologies. I believe the best innovations come from combining technical expertise with creative thinking.</p>
-								
-								<p>Whether it's developing custom software, designing manufacturing solutions, or helping you navigate the entire product development process, I approach every project with the same curiosity and attention to detail that drives my personal creative pursuits.</p>
-							</article>
+<div class="g">
+  <div class="p"><h2>CLOCK + ZONES</h2><div>Local time and your own list of world time zones.</div></div>
+  <div class="p"><h2>ATMOSPHERE</h2><div>Live weather and forecast for any city.</div></div>
+  <div class="p"><h2>AIR QUALITY</h2><div>AQI with pollutant breakdown, color coded.</div></div>
+  <div class="p"><h2>EXCHANGE</h2><div>Currency rates, including the Tijuana street dollar.</div></div>
+  <div class="p"><h2>BORDER WAIT</h2><div>Live CBP wait times for Southwest crossings.</div></div>
+  <div class="p"><h2>COASTAL</h2><div>Tijuana and San Diego beach water quality with County closures and advisories.</div></div>
+  <div class="p"><h2>SYSTEM</h2><div>CPU, GPU, memory, storage, battery, temperature and fans.</div></div>
+  <div class="p"><h2>AFFIRMATIONS</h2><div>888 of them, one at a time.</div></div>
+  <div class="p"><h2>6 THEMES</h2><div>Matrix green, amber, cyan and more. Full screen on any display.</div></div>
+</div>
 
-						<!-- Work -->
-							<article id="work">
-								<h2 class="major">Work <img src="images/bezier.png" alt="Bezier Curve Icon" class="title-icon" /></h2>
-								
-								<h3>Product Development & Manufacturing</h3>
-								<p>From concept to production, I guide you through the complete product development cycle. This includes 3D CAD design, prototyping, testing, material selection, and full-scale manufacturing. I manage the entire process from initial design through final delivery, including logistics and nearshore manufacturing coordination between Mexico and the United States. Additionally, I design and build custom fixtures, jigs, and specialized tools including automation needs to streamline assembly processes and improve workplace safety. [<a href="https://www.youtube.com/@open3dlabs" target="_blank" style="font-weight: bold; color: #5DA6C9;">Youtube</a>] [<a href="https://www.thingiverse.com/Open3Dlabs/designs" target="_blank" style="font-weight: bold; color: #5DA6C9;">Thingiverse</a>]</p>
-								
-								<h3>Technology Solutions & Digital Strategy</h3>
-								<p>I develop custom software solutions and applications tailored to your business needs, using modern development and AI tools to create efficient, scalable software. My services include comprehensive tech support and helping businesses establish and maintain their online presence through custom website development and strategic digital positioning, with a specialized team handling social media management and comprehensive online strategy to enhance your market presence. [<a href="bridge/" target="_blank" style="font-weight: bold; color: #5DA6C9;">O3D-BRIDGE</a>]</p>
-							</article>
-
-						<!-- About -->
-							<article id="about">
-								<h2 class="major">About</h2>
-								<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
-								<p>In progress...</p>
-							</article>
-
-						<!-- Contact -->
-							<article id="contact">
-								<h2 class="major">Contact <img src="images/zoom.png" alt="Zoom Icon" class="title-icon" /></h2>
-								<p><strong>Email:</strong> alex@open3dlaboratories.com</p>
-								<p><strong>Service Area:</strong> Tijuana - San Diego Area.<br />
-								Available for cross-border coordination and remote projects worldwide.</p>
-								<p><strong>Languages:</strong> English and Spanish</p>
-								<p><strong>Business Hours:</strong><br />
-								Monday: 10 AM - 5 PM<br />
-								Tuesday: 10 AM - 5 PM<br />
-								Wednesday: 10 AM - 5 PM<br />
-								Friday: 10 AM - 5 PM<br />
-								Saturday: 10 AM - 2 PM</p>
-								<p><strong>Response Time:</strong> I typically respond within 24 hours</p>
-								<p>Send your ideas or questions to my email.</p>
-							</article>
-
-						<!-- Elements -->
-							<article id="elements">
-								<h2 class="major">Elements</h2>
-
-								<section>
-									<h3 class="major">Text</h3>
-									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-									<hr />
-									<h2>Heading Level 2</h2>
-									<h3>Heading Level 3</h3>
-									<h4>Heading Level 4</h4>
-									<h5>Heading Level 5</h5>
-									<h6>Heading Level 6</h6>
-									<hr />
-									<h4>Blockquote</h4>
-									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-									<h4>Preformatted</h4>
-									<pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-								</section>
-
-								<section>
-									<h3 class="major">Lists</h3>
-
-									<h4>Unordered</h4>
-									<ul>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Alternate</h4>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Ordered</h4>
-									<ol>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis viverra.</li>
-										<li>Felis enim feugiat.</li>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis lorem.</li>
-										<li>Felis enim et feugiat.</li>
-									</ol>
-									<h4>Icons</h4>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-									</ul>
-
-									<h4>Actions</h4>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</section>
-
-								<section>
-									<h3 class="major">Table</h3>
-									<h4>Default</h4>
-									<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-
-									<h4>Alternate</h4>
-									<div class="table-wrapper">
-										<table class="alt">
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-								</section>
-
-								<section>
-									<h3 class="major">Buttons</h3>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Primary</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button">Default</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-									</ul>
-									<ul class="actions">
-										<li><span class="button primary disabled">Disabled</span></li>
-										<li><span class="button disabled">Disabled</span></li>
-									</ul>
-								</section>
-
-								<section>
-									<h3 class="major">Form</h3>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="demo-name">Name</label>
-												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
-											</div>
-											<div class="field half">
-												<label for="demo-email">Email</label>
-												<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
-											</div>
-											<div class="field">
-												<label for="demo-category">Category</label>
-												<select name="demo-category" id="demo-category">
-													<option value="">-</option>
-													<option value="1">Manufacturing</option>
-													<option value="1">Shipping</option>
-													<option value="1">Administration</option>
-													<option value="1">Human Resources</option>
-												</select>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-												<label for="demo-priority-low">Low</label>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-high" name="demo-priority">
-												<label for="demo-priority-high">High</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-copy" name="demo-copy">
-												<label for="demo-copy">Email me a copy</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-human" name="demo-human" checked>
-												<label for="demo-human">Not a robot</label>
-											</div>
-											<div class="field">
-												<label for="demo-message">Message</label>
-												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</form>
-								</section>
-
-							</article>
-
-					</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-					</footer>
-
-			</div>
-
-		<!-- BG -->
-			<div id="bg"></div>
-
-		<!-- Matrix Toggle Button -->
-			<button id="matrix-toggle" onclick="toggleMatrix()" title="Toggle Matrix Mode">01<br>10</button>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script src="assets/js/matrix.js"></script>
-
-	</body>
+<footer>
+  Made with love by Alex V&aacute;zquez<br>
+  <a href="https://open3dlaboratories.com">open3Dlaboratories.com</a> &middot; <a href="mailto:alex@open3dlaboratories.com">alex@open3Dlaboratories.com</a>
+</footer>
+</div>
+<div class="ov" id="ov" role="dialog" aria-modal="true" aria-labelledby="mt">
+  <div class="md">
+    <h2><span>DOWNLOAD STARTED</span><button id="x" aria-label="Close">&times;</button></h2>
+    <div class="c">
+      <div class="t" id="mt">BUY ME A CHEESEBURGER</div>
+      <p>O3D-BRIDGE is free. Cheeseburgers help fund the $99/yr Apple Developer fee to get it on the App Store and prep the iOS version.</p>
+      <a class="btn" href="https://paypal.me/open3Dlabs" target="_blank" rel="noopener" id="pp">&#127828; BUY ME A CHEESEBURGER</a>
+      <button class="no" id="no">Maybe later, thanks</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var ov=document.getElementById("ov"),KEY="o3dBurgerAsked",WEEK=7*864e5;
+  function recent(){try{var t=+localStorage.getItem(KEY);return t&&Date.now()-t<WEEK}catch(e){return false}}
+  function mark(){try{localStorage.setItem(KEY,String(Date.now()))}catch(e){}}
+  function close(){ov.classList.remove("on");mark()}
+  document.getElementById("dl").addEventListener("click",function(){
+    if(recent())return;               // asked in the last week: just download, no popup
+    setTimeout(function(){ov.classList.add("on")},700);
+  });
+  ["x","no","pp"].forEach(function(id){document.getElementById(id).addEventListener("click",close)});
+  ov.addEventListener("click",function(e){if(e.target===ov)close()});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")close()});
+})();
+</script>
+</body>
 </html>
