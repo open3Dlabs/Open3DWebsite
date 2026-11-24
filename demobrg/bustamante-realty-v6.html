@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bustamante Realty Group | Inmobiliaria en Tijuana</title>
+<meta name="description" content="Compra, renta o vende casas, departamentos, oficinas y edificios en Tijuana, Rosarito y Ensenada.">
+<style>
+:root{--blue:#1c4f8f;--blue-dark:#0f2f55;--blue-soft:#eaf1fa;--ink:#16202b;--muted:#5c6b7a;--line:#dde4ec;--wa:#1faa59;--warm:#c2662b;--pre:#2a8a6a;--r:18px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.5;-webkit-text-size-adjust:100%}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button{font-family:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.12;letter-spacing:-.02em}
+section{padding:56px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 26px;border-radius:999px;font-weight:700;font-size:1rem;border:0;cursor:pointer;transition:transform .1s,background .15s}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--blue);color:#fff}.btn-primary:hover{background:var(--blue-dark)}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-ghost{background:#fff;color:var(--blue);border:2px solid var(--blue)}
+.btn-white{background:#fff;color:var(--blue)}
+.btn-block{width:100%}
+.btn-sm{min-height:42px;padding:0 16px;font-size:.9rem}
+
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{display:flex;align-items:center}
+.logo img{height:42px;width:auto}
+nav.desktop{display:none;gap:2px}
+nav.desktop a{padding:10px 14px;border-radius:999px;font-weight:600}
+nav.desktop a:hover,nav.desktop a.on{background:var(--blue-soft);color:var(--blue)}
+.bar .right{display:flex;align-items:center;gap:10px}
+.phone{display:none;font-weight:700;color:var(--blue);white-space:nowrap}
+.phone small{font-size:.72rem;letter-spacing:.08em;color:var(--muted);font-weight:700;margin-right:6px}
+.callbox{display:none;flex-direction:column;align-items:center;gap:8px;margin-right:18px}
+.soc{display:flex;gap:8px}
+.soc a{width:34px;height:34px;border-radius:50%;background:var(--blue-soft);color:var(--blue);display:flex;align-items:center;justify-content:center;transition:background .15s,color .15s}
+.soc a:hover{background:var(--blue);color:#fff}
+.soc svg{width:18px;height:18px;fill:currentColor}
+.menu-btn{min-height:44px;padding:0 18px;border-radius:999px;border:2px solid var(--blue);background:#fff;color:var(--blue);font-weight:700;font-size:1rem;cursor:pointer}
+#menu{position:fixed;inset:0;background:var(--blue-dark);color:#fff;z-index:100;display:none;flex-direction:column;padding:20px;overflow:auto}
+#menu.open{display:flex}
+#menu .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+#menu .close{background:rgba(255,255,255,.15);color:#fff;border:0;border-radius:999px;min-height:44px;padding:0 18px;font-weight:700;font-size:1rem;cursor:pointer}
+#menu a.big{font-size:1.8rem;font-weight:800;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.15);display:block}
+#menu .cta{margin-top:22px;display:grid;gap:10px}
+
+.hero{position:relative}
+.slides{position:relative;height:clamp(380px,52vw,560px);overflow:hidden;background:var(--blue-dark);touch-action:pan-y}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity .7s ease;background-size:cover;background-position:center}
+.slide.on{opacity:1}
+.slide::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,25,45,.85) 0%,rgba(10,25,45,.25) 45%,rgba(10,25,45,0) 70%)}
+.slidelink{position:absolute;inset:0;z-index:2;cursor:pointer}
+.cap{pointer-events:none;position:absolute;left:0;right:0;bottom:78px;z-index:3;color:#fff}
+.cap small{display:inline-block;background:rgba(255,255,255,.18);backdrop-filter:blur(6px);padding:5px 12px;border-radius:999px;font-weight:600;font-size:.8rem;margin-bottom:10px}
+.cap h2{font-size:clamp(1.8rem,5.5vw,3rem);margin-bottom:14px;text-shadow:0 2px 12px rgba(0,0,0,.35)}
+.arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:4;width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.88);color:var(--blue);font-size:1.3rem;font-weight:800;cursor:pointer;display:none}
+.arrow.l{left:18px}.arrow.r{right:18px}
+.dotrow{position:absolute;left:20px;right:20px;top:18px;z-index:4;display:flex;gap:6px;justify-content:center}
+.dotrow button{width:9px;height:9px;border-radius:50%;border:0;background:rgba(255,255,255,.5);cursor:pointer;padding:0}
+.dotrow button.on{background:#fff;width:22px;border-radius:9px}
+
+.search{position:relative;z-index:6;margin:-64px auto 0;max-width:900px;background:#fff;border-radius:24px;padding:18px;box-shadow:0 18px 50px rgba(15,47,85,.18)}
+.tabs{display:grid;grid-template-columns:1fr 1fr;background:var(--blue-soft);border-radius:999px;padding:4px;margin-bottom:14px}
+.tabs button{min-height:46px;border:0;border-radius:999px;background:transparent;font-weight:700;font-size:1rem;color:var(--blue);cursor:pointer}
+.tabs button.on{background:var(--blue);color:#fff}
+.chiplbl{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:700;margin:2px 0 8px 4px}
+.chips{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:14px}
+.chips.z{grid-template-columns:repeat(2,1fr)}
+.chips button{min-height:52px;border-radius:14px;border:2px solid var(--line);background:#fff;font-weight:600;font-size:.98rem;cursor:pointer;padding:0 8px;color:var(--ink);transition:border-color .15s,background .15s}
+.chips button:hover{border-color:var(--blue)}
+.chips button.on{border-color:var(--blue);background:var(--blue-soft);color:var(--blue)}
+input,textarea,select{width:100%;min-height:52px;border-radius:14px;border:2px solid var(--line);padding:0 14px;font-size:1rem;background:#fff;color:var(--ink);font-family:inherit}
+textarea{padding:12px 14px;min-height:96px;resize:vertical}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--blue)}
+
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:28px}
+.stat{text-align:center;padding:14px 8px}
+.stat b{display:block;font-size:1.9rem;color:var(--blue);letter-spacing:-.02em}
+.stat span{font-size:.88rem;color:var(--muted)}
+
+.sec-title{font-size:clamp(1.5rem,4.5vw,2.2rem);margin-bottom:8px}
+.sec-sub{color:var(--muted);margin-bottom:24px}
+.row-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:20px}
+.row-head .sec-sub{margin-bottom:0}
+.link{color:var(--blue);font-weight:700;white-space:nowrap}
+
+.cats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cat{background:var(--blue-soft);border-radius:var(--r);padding:20px 16px;min-height:124px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .15s,background .15s}
+.cat:hover{transform:translateY(-3px);background:#dbe8f7}
+.cat .ico{font-size:1.8rem}
+.cat b{font-size:1.1rem}
+.cat .d{font-size:.85rem;color:var(--muted)}
+
+.listings{display:grid;gap:18px}
+.card{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:#fff;display:flex;flex-direction:column;transition:box-shadow .15s,transform .15s}
+.card:hover{box-shadow:0 14px 30px rgba(15,47,85,.13);transform:translateY(-3px)}
+.card .img{aspect-ratio:3/2;background:var(--blue-soft);position:relative;overflow:hidden}
+.card .img img{width:100%;height:100%;object-fit:cover}
+.tag{position:absolute;top:12px;left:12px;background:var(--blue);color:#fff;font-size:.78rem;font-weight:700;padding:5px 12px;border-radius:999px}
+.tag.rent{background:var(--warm)}.tag.pre{background:var(--pre)}
+.card .body{padding:16px}
+.price{font-size:1.35rem;font-weight:800;color:var(--blue)}
+.price small{font-size:.85rem;font-weight:600;color:var(--muted)}
+.price.ask{font-size:1.05rem;color:var(--muted)}
+.card h3{font-size:1rem;font-weight:600;margin:4px 0 6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.meta{font-size:.88rem;color:var(--muted)}
+.more{margin-top:28px;text-align:center}
+
+.band{background:var(--blue);color:#fff;border-radius:26px;padding:32px 24px;display:grid;gap:16px}
+.band h2{font-size:clamp(1.5rem,5vw,2.1rem)}
+.band p{opacity:.9}
+.band .btn{justify-self:start}
+
+.pgrid{display:grid;gap:16px}
+.proj{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:16/9;background:var(--blue-dark);display:block}
+.proj img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.proj:hover img{transform:scale(1.04)}
+.proj::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,25,45,.85),rgba(10,25,45,0) 60%)}
+.proj .t{position:absolute;left:16px;right:16px;bottom:14px;z-index:2;color:#fff;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.proj .t b{font-size:1.15rem}
+.proj .t span{background:#fff;color:var(--blue);font-weight:700;font-size:.85rem;padding:7px 14px;border-radius:999px}
+
+.pagehead{background:linear-gradient(160deg,var(--blue-soft),#fff);padding:36px 0 28px}
+.pagehead h1{font-size:clamp(1.9rem,6vw,2.8rem);margin-bottom:6px}
+.pagehead p{color:var(--muted)}
+.filters{display:flex;flex-wrap:wrap;gap:10px 18px;margin:18px 0 0}
+.fgroup{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.fgroup .lbl{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:700;margin-right:2px}
+.f{padding:10px 16px;border-radius:999px;border:2px solid var(--line);background:#fff;font-weight:600;font-size:.95rem;cursor:pointer}
+.f.on{border-color:var(--blue);background:var(--blue);color:#fff}
+.empty{text-align:center;padding:56px 20px;background:var(--blue-soft);border-radius:var(--r)}
+.empty h3{margin-bottom:8px}
+
+.crumb{display:inline-flex;gap:6px;color:var(--blue);font-weight:700;padding:18px 0 6px}
+.detail{display:grid;gap:24px;padding-bottom:40px}
+.dimg{border-radius:22px;overflow:hidden;background:var(--blue-soft);aspect-ratio:3/2;position:relative}
+.dimg img{width:100%;height:100%;object-fit:cover}
+.dprice{font-size:2rem;font-weight:800;color:var(--blue);letter-spacing:-.02em}
+.dprice small{font-size:1rem;color:var(--muted);font-weight:600}
+.specs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}
+.spec{background:var(--blue-soft);border-radius:14px;padding:14px;text-align:center}
+.spec b{display:block;font-size:1.25rem}
+.spec span{font-size:.82rem;color:var(--muted)}
+.panel{border:1px solid var(--line);border-radius:22px;padding:20px;box-shadow:0 10px 30px rgba(15,47,85,.07);display:grid;gap:10px;align-self:start}
+.panel h3{font-size:1.2rem}
+.panel .sm{font-size:.85rem;color:var(--muted)}
+.agent{display:flex;gap:12px;align-items:center;background:var(--blue-soft);border-radius:14px;padding:12px}
+.ava{flex:0 0 52px;width:52px;height:52px;border-radius:50%;background:var(--blue);color:#fff;font-weight:800;display:grid;place-items:center;overflow:hidden;position:relative}
+.ava img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+.formcard{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px;display:grid;gap:12px;box-shadow:0 10px 30px rgba(15,47,85,.07)}
+.formcard label{font-weight:700;font-size:.9rem}
+.two{display:grid;gap:18px}
+.infoblock p{margin-bottom:12px}
+.infoblock b{display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.steps{display:grid;gap:12px;margin-top:8px}
+.step{display:flex;gap:14px;align-items:flex-start}
+.step i{flex:0 0 36px;height:36px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-style:normal;font-weight:800}
+
+.scroller{display:flex;gap:8px;overflow-x:auto;padding:4px 0 10px;margin:14px 0 0;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+.scroller .f{white-space:nowrap;flex:0 0 auto}
+.tgrid{display:grid;gap:14px}
+.tcard{border:1px solid var(--line);border-radius:var(--r);padding:16px;display:grid;gap:12px;background:#fff}
+.tcard .who{display:flex;gap:12px;align-items:center}
+.tcard b{display:block;line-height:1.2}
+.tcard span.r{font-size:.85rem;color:var(--muted)}
+.tcard .acts{display:flex;gap:8px;flex-wrap:wrap}
+.divh{margin:28px 0 12px;font-size:1.2rem}
+
+.pills{display:flex;flex-wrap:wrap;gap:10px}.pills a{padding:12px 18px;border-radius:999px;border:2px solid var(--line);font-weight:600}.pills a:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-soft)}
+footer{background:var(--blue-dark);color:rgba(255,255,255,.8);padding:40px 0 120px;font-size:.9rem}
+footer .grid{display:grid;gap:24px;margin-bottom:24px}
+footer h4{color:#fff;margin-bottom:10px}
+footer a{display:block;padding:4px 0}
+footer a:hover{color:#fff}
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:60;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+.dock .btn{min-height:50px}
+
+@media(min-width:700px){
+  .chips{grid-template-columns:repeat(4,1fr)}
+  .cats{grid-template-columns:repeat(3,1fr)}
+  .listings{grid-template-columns:repeat(2,1fr)}
+  .pgrid{grid-template-columns:repeat(2,1fr)}
+  .tgrid{grid-template-columns:repeat(2,1fr)}
+  .stats{grid-template-columns:repeat(4,1fr)}
+  .band{grid-template-columns:1fr auto;align-items:center;padding:40px}
+  .two{grid-template-columns:1fr 1fr}
+  footer .grid{grid-template-columns:2fr 1fr 1fr}
+  .arrow{display:block}
+}
+@media(min-width:960px){
+  .bar{height:136px}
+  nav.desktop{display:flex}.callbox{display:flex}.phone{display:inline}.menu-btn{display:none}
+  .listings{grid-template-columns:repeat(3,1fr)}
+  .pgrid{grid-template-columns:repeat(3,1fr)}
+  .tgrid{grid-template-columns:repeat(3,1fr)}
+  .cats{grid-template-columns:repeat(6,1fr)}
+  .dock{display:none}
+  footer{padding-bottom:40px}
+  section{padding:72px 0}
+  .detail{grid-template-columns:1.5fr 1fr;gap:36px}
+  .panel{position:sticky;top:150px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#/" aria-label="Bustamante Realty Group"><img src="https://s3.amazonaws.com/assets.moveglobally.com/organization_files/12381/LogotipoAzulBRG_-_sin_fondo4.png" alt="Bustamante Realty Group"></a>
+    <nav class="desktop" aria-label="Principal">
+      <a href="#/propiedades?op=venta" data-nav="comprar">Comprar</a>
+      <a href="#/propiedades?op=renta" data-nav="rentar">Rentar</a>
+      <a href="#/proyectos" data-nav="proyectos">Proyectos</a>
+      <a href="#/vender" data-nav="vender">Vender</a>
+      <a href="#/equipo" data-nav="equipo">Equipo</a>
+      <a href="#/contacto" data-nav="contacto">Contacto</a>
+    </nav>
+    <div class="right">
+      <div class="callbox">
+        <a class="phone" href="tel:+526646862120"><small>LLÁMANOS:</small>664 686 2120</a>
+        <div class="soc">
+          <a href="#" data-wa="Hola, me gustaría recibir información y asesoría sobre sus propiedades. ¡Gracias!" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.6 4.1 1.6 5.9L0 24l6.4-1.7a11.9 11.9 0 0 0 5.6 1.4c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.3zM12 21.7c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.8 1 1-3.7-.2-.4a9.8 9.8 0 0 1-1.5-5.2C2.1 6.4 6.5 2 12 2c2.6 0 5.1 1 6.9 2.9a9.7 9.7 0 0 1 2.9 6.9c0 5.4-4.4 9.9-9.8 9.9zm5.4-7.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.6.1a8 8 0 0 1-4-3.5c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.4 1 2.8 1.2 3c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.5.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4s-.3-.2-.6-.3z"/></svg></a>
+          <a href="https://www.facebook.com/BustamanteRealtyGroup" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12z"/></svg></a>
+          <a href="https://www.youtube.com/user/BRGmexico" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg></a>
+          <a href="https://www.instagram.com/brgmexico/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 3.9 4 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c4.4-.2 6.800-2.600 7-7 .1-1.200.1-1.600.1-4.900s0-3.700-.1-4.900c-.2-4.400-2.600-6.800-7-7C15.700 0 15.300 0 12 0zm0 5.800a6.200 6.200 0 1 0 0 12.400 6.200 6.200 0 0 0 0-12.400zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.400-11.800a1.400 1.400 0 1 0 0 2.900 1.400 1.400 0 0 0 0-2.900z"/></svg></a>
+        </div>
+      </div>
+      <button class="menu-btn" id="openMenu" aria-label="Abrir menú">Menú</button>
+    </div>
+  </div>
+</header>
+
+<div id="menu" role="dialog" aria-label="Menú">
+  <div class="top">
+    <img src="https://s3.amazonaws.com/assets.moveglobally.com/organization_files/12381/LogotipoAzulBRG_-_sin_fondo4.png" alt="" style="height:40px;filter:brightness(0) invert(1)">
+    <button class="close" id="closeMenu">Cerrar</button>
+  </div>
+  <a class="big" href="#/propiedades?op=venta">Comprar</a>
+  <a class="big" href="#/propiedades?op=renta">Rentar</a>
+  <a class="big" href="#/proyectos">Proyectos nuevos</a>
+  <a class="big" href="#/vender">Vender mi propiedad</a>
+  <a class="big" href="#/equipo">Nuestro equipo</a>
+  <a class="big" href="#/contacto">Contacto</a>
+  <div class="cta">
+    <a class="btn btn-wa" href="#" data-wa="Hola, me gustaría recibir información y asesoría sobre sus propiedades. ¡Gracias!">WhatsApp</a>
+    <a class="btn btn-white" href="tel:+526646862120">Llamar 664 686 2120</a>
+  </div>
+</div>
+
+<main id="app"></main>
+
+<footer>
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <img src="https://s3.amazonaws.com/assets.moveglobally.com/organization_files/12381/LogotipoAzulBRG_-_sin_fondo4.png" alt="Bustamante Realty Group" style="height:44px;filter:brightness(0) invert(1);margin-bottom:12px">
+        <p>Líder regional de la industria inmobiliaria.<br>Calle Escuadrón 201 #3110-7, Zona Río, Tijuana, B.C.</p>
+        <p style="margin-top:8px"><a href="tel:+526646862120">664 686 2120</a><a href="mailto:info@brg.mx">info@brg.mx</a></p>
+      </div>
+      <div>
+        <h4>Explorar</h4>
+        <a href="#/propiedades?op=venta">Comprar</a>
+        <a href="#/propiedades?op=renta">Rentar</a>
+        <a href="#/proyectos">Proyectos</a>
+        <a href="#/vender">Vender</a>
+        <a href="#/equipo">Equipo</a>
+        <a href="#/contacto">Contacto</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="https://www.brg.mx/AvisoDePrivacidad.pdf" target="_blank" rel="noopener">Aviso de privacidad</a>
+        <a href="https://www.brg.mx/PoliticaDeNoDiscriminacion.pdf" target="_blank" rel="noopener">No discriminación</a>
+        <a href="https://www.brg.mx/CartaDerechosDelConsumidor.pdf" target="_blank" rel="noopener">Derechos del consumidor</a>
+        <a href="https://www.brg.mx/Honorarios.pdf" target="_blank" rel="noopener">Honorarios</a>
+        <a href="https://www.brg.mx/CanalesDeAtencion.pdf" target="_blank" rel="noopener">Canales de atención</a>
+        <a href="https://www.brg.mx/ContratoInmobiliarioRegistradoEnProfeco.pdf" target="_blank" rel="noopener">Contrato Profeco</a>
+      </div>
+    </div>
+    <p>© 2026 Bustamante Realty Group. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<div class="dock">
+  <a class="btn btn-wa" href="#" data-wa="Hola, me gustaría recibir información y asesoría sobre sus propiedades. ¡Gracias!">WhatsApp</a>
+  <a class="btn btn-primary" href="tel:+526646862120">Llamar</a>
+</div>
+
+<script>
+(function(){
+var WA='5216642805488';
+function wa(t,to){return 'https://wa.me/'+(to||WA)+'?text='+encodeURIComponent(t)}
+var IMG='https://assets.easybroker.com/organization_files/12381/';
+
+/*DATA*/
+var L=[{"id":"venta-en-fracc-siena-residencial-ensenada","op":"venta","kind":"casa","label":"Casa","zona":"costa","title":"Venta en Fracc. Siena Residencial, Ensenada!","loc":"Chapultepec, Ensenada","price":"$3,800,000 MXN","rec":3,"ban":3,"img":"https://assets.easybroker.com/property_images/6374622/113478297/EB-XM4622.jpeg?height=300&s=8fadf7690c72b8d4&version=1794954513&width=450","agent":"Tanya Vega","lat":"31.7868271514","lng":"-116.590595228"},{"id":"residencia-en-venta-vista-hermosa-ensenada-b-c","op":"venta","kind":"casa","label":"Casa","zona":"costa","title":"Residencia en Venta | Vista Hermosa, Ensenada, B.C.","loc":"Puerta del Mar, Ensenada","price":"$6,400,000 MXN","rec":2,"ban":2,"img":"https://assets.easybroker.com/property_images/6374570/113477423/EB-XM4570.jpeg?height=300&s=4f9d5d08398aa705&version=1794953711&width=450","agent":"Tanya Vega","lat":"31.8159204968","lng":"-116.5833902536"},{"id":"departamento-en-venta-the-landmark-two","op":"venta","kind":"depa","label":"Departamento","zona":"tijuana","title":"Departamento en venta, The Landmark Two","loc":"Calete, Tijuana","price":"$355,000 USD","rec":1,"ban":1,"m2":"86","img":"https://assets.easybroker.com/property_images/6374402/113475267/EB-XM4402.jpg?height=300&s=7c146ee3a7c93a61&version=1794951208&width=450","agent":"Odette Valle","lat":"32.5172276513","lng":"-117.0154581647"},{"id":"casa-en-venta-alicia-carrillo","op":"venta","kind":"casa","label":"Casa","zona":"tijuana","title":"Casa en venta, Fracc. Alicia Carrillo","loc":"Alicia Carrillo, Tijuana","price":"$430,000 USD","rec":3,"ban":3,"m2":"317","img":"https://assets.easybroker.com/property_images/6374282/113471892/EB-XM4282.jpg?height=300&s=5a59877636213870&version=1794948304&width=450","agent":"Sandra Morales","lat":"32.5023192","lng":"-116.9841384"},{"id":"departamento-en-venta-via-rapida-zona-urbana-rio-tijuana","op":"venta","kind":"depa","label":"Departamento","zona":"tijuana","title":"Departamento en venta, Vía Rápida","loc":"Zona Urbana Río Tijuana, Tijuana","price":"$3,580,000 MXN","rec":3,"ban":2,"img":"https://assets.easybroker.com/property_images/6365484/113294969/EB-XL5484.jpg?height=300&s=e8872011316ddb8d&version=1794445536&width=450","agent":"Joel Sanchez","lat":"32.5216668","lng":"-117.0076419"},{"id":"casa-townhouse-rancho-grande","op":"venta","kind":"casa","label":"Casa","zona":"tijuana","title":"Casa Townhouse en venta, Rancho Grande","loc":"Rancho el Grande, Tijuana","price":"$6,950,000 MXN","rec":3,"ban":2,"m2":"180.41","img":"https://assets.easybroker.com/property_images/6365455/113293943/EB-XL5455.jpg?height=300&s=feff7554e7562254&version=1794444076&width=450","agent":"Odette Valle","lat":"32.5010924","lng":"-117.007898"},{"id":"departamento-en-venta-adamant-grand-436b2489-62be-4b16-bcd3-290110ec7c41","op":"venta","kind":"depa","label":"Departamento","zona":"tijuana","title":"Departamento en venta, Adamant Grand","loc":"Calete, Tijuana","price":"$7,700,000 MXN","rec":3,"ban":2,"m2":"113","img":"https://assets.easybroker.com/property_images/6365433/113293493/EB-XL5433.jpg?height=300&s=1e98a315ddce6bf7&version=1794443553&width=450","agent":"Odette Valle","lat":"32.5167113","lng":"-117.0182126"},{"id":"departamento-en-venta-luzia-plaza-peninsula-d26d0153-68d1-44a5-a1ab-ec982efffc31","op":"venta","kind":"depa","label":"Departamento","zona":"tijuana","title":"Departamento en venta, LUZIA, Plaza Península","loc":"Chapultepec Alamar, Tijuana","price":"$6,150,000 MXN","rec":2,"ban":2,"m2":"106","img":"https://assets.easybroker.com/property_images/6353911/113049944/EB-XK3911.jpg?height=300&s=0ac3287dd1fc8a2f&version=1793911876&width=450","agent":"Carla Lara","lat":"32.5136526","lng":"-116.9656266"},{"id":"casa-en-venta-real-del-mar-cf6b08d2-3924-4023-b5e5-22776d9eb057","op":"venta","kind":"casa","label":"Casa","zona":"tijuana","title":"Casa en venta, Real del Mar","loc":"Real del Mar, Tijuana","price":"$520,000 USD","rec":3,"ban":3,"m2":"212","img":"https://assets.easybroker.com/property_images/6348870/112939227/EB-XJ8870.jpg?height=300&s=f9396056110ccacf&version=1793737303&width=450","agent":"Odette Valle","lat":"32.447852","lng":"-117.1025335"},{"id":"casa-en-venta-hacienda-agua-caliente-1807f772-f977-4ac2-9572-6b1127a192af","op":"venta","kind":"casa","label":"Casa","zona":"tijuana","title":"Casa en venta, Hacienda Agua Caliente","loc":"Hacienda Agua Caliente, Tijuana","price":"$14,900,000 MXN","rec":4,"ban":3,"m2":"308","img":"https://assets.easybroker.com/property_images/6339851/112837999/EB-XI9851.jpg?height=300&s=1af625190ea299c2&version=1793388976&width=450","agent":"Mariela Barragán","lat":"32.4891341","lng":"-116.99796"},{"id":"casa-en-venta-real-del-mar-708029f7-12fe-488d-8dea-2816c335e95e","op":"venta","kind":"casa","label":"Casa","zona":"tijuana","title":"Casa en venta, Real del Mar","loc":"Real del Mar, Tijuana","price":"$685,000 USD","rec":4,"ban":4,"m2":"360","img":"https://assets.easybroker.com/property_images/5429343/93947096/EB-TV9343.jpg?height=300&s=2f0bb7e0e91bad4e&version=1758579767&width=450","agent":"Martha Guerrero","lat":"32.4468852065","lng":"-117.0916262578"},{"id":"departamento-en-venta-playas-de-tijuana-playas-de-tijuana-seccion-monumental-tijuana","op":"venta","kind":"depa","label":"Departamento","zona":"tijuana","title":"Departamento en Pre-Venta, Playas de Tijuana \"Finis Terra\"","loc":"Playas de Tijuana Sección Monumental, Tijuana","price":"$4,390,000 MXN","rec":2,"ban":2,"m2":"114","img":"https://assets.easybroker.com/property_images/5927214/106263821/EB-VT7214.jpeg?height=300&s=2600ad7df568c0bc&version=1779747388&width=450","agent":"Mayra Soltero","lat":"32.5288769","lng":"-117.1229109"},{"id":"departamento-en-venta-playas-de-tijuana-playas-de-tijuana-seccion-monumental","op":"venta","kind":"depa","label":"Departamento","zona":"tijuana","title":"Departamento en Pre-Venta, Playas de Tijuana \"Finis Terra\"","loc":"Playas de Tijuana Sección Monumental, Tijuana","price":"$4,200,000 MXN","rec":2,"ban":2,"m2":"109","img":"https://assets.easybroker.com/property_images/5851782/106263793/EB-VM1782.jpeg?height=300&s=da6117bce876a020&version=1779747340&width=450","agent":"Mayra Soltero","lat":"32.5288728","lng":"-117.122902"},{"id":"departamento-en-venta-landmark-ii-calete-tijuana","op":"venta","kind":"depa","label":"Departamento","zona":"tijuana","title":"Departamento en venta, The Landmark Two","loc":"Calete, Tijuana","price":"$565,000 USD","rec":2,"ban":2,"m2":"116","img":"https://assets.easybroker.com/property_images/6314724/112216646/EB-XG4724.jpg?height=300&s=c1963db277cbfb17&version=1792092647&width=450","agent":"Odette Valle","lat":"32.5170299","lng":"-117.0144154"},{"id":"departamento-en-venta-torre-wesley","op":"venta","kind":"depa","label":"Departamento","zona":"tijuana","title":"Departamento en venta, Torre Wesley","loc":"Playas de Tijuana Sección Terrazas, Tijuana","price":"$269,000 USD","rec":2,"ban":2,"m2":"79.3","img":"https://assets.easybroker.com/property_images/6302319/111958613/EB-XF2319.jpg?height=300&s=671808e573e7c39b&version=1791501355&width=450","agent":"Selene Vega","lat":"32.5318682","lng":"-117.118915"},{"id":"casa-en-venta-residencial-pueblo-bonito","op":"venta","kind":"casa","label":"Casa","zona":"tijuana","title":"Casa en venta, Residencial Pueblo Bonito","loc":"Pueblo Bonito, Tijuana","price":"$7,950,000 MXN","rec":3,"ban":4,"m2":"200","img":"https://assets.easybroker.com/property_images/6285963/111658019/EB-XD5963.jpg?height=300&s=bef7a9b6a52b362e&version=1790987315&width=450","agent":"Marycarmen Encinas","lat":"32.4966911487","lng":"-116.9979254498"},{"id":"departamento-en-venta-torre-wesly","op":"venta","kind":"depa","label":"Departamento","zona":"tijuana","title":"Departamento en venta, Torre Wesley","loc":"Playas de Tijuana Sección Terrazas, Tijuana","price":"$192,000 USD","rec":1,"ban":1,"m2":"68","img":"https://assets.easybroker.com/property_images/6285923/111657411/EB-XD5923.jpg?height=300&s=1b709362ca3dd783&version=1790986301&width=450","agent":"Alfredo Jauregui","lat":"32.5318682","lng":"-117.118915"},{"id":"departamento-en-venta-ovva-torre-a-zona-urbana-rio-tijuana","op":"venta","pre":true,"kind":"depa","label":"Departamento","zona":"tijuana","title":"Departamento en venta, Ovva Torre A","loc":"Zona Urbana Río Tijuana, Tijuana","price":"$10,855,000 MXN","rec":3,"ban":2,"m2":"116","img":"https://assets.easybroker.com/property_images/6278281/111496140/EB-XC8281.jpg?height=300&s=c50d3495f5d532a6&version=1790729765&width=450","agent":"Edith Carrillo","lat":"32.5201032","lng":"-117.014578"},{"id":"exclusiva-privada-dentro-de-privada-suenos-del-mar-rosarito-b-c","op":"venta","kind":"casa","label":"Casa","zona":"tijuana","title":"Exclusiva Privada Dentro de Privada | Sueños del Mar, Rosarito, B.C.","loc":"Residencial San Marino, Tijuana","price":"$450,000 USD","rec":3,"ban":2,"m2":"165","img":"https://assets.easybroker.com/property_images/6285632/111652178/EB-XD5632.jpeg?height=300&s=1492db244e3d2ebe&version=1790980200&width=450","agent":"Tanya Vega","lat":"32.4187060431","lng":"-117.0878110056"},{"id":"edificio-oceanfront-en-venta-4-condominios-con-vista-panoramica-al-mar","op":"venta","kind":"edificio","label":"Edificio","zona":"costa","title":"Edificio Oceanfront en Venta | 4 Condominios con Vista Panorámica al Mar","loc":"La Barca, Playas de Rosarito","price":"$2,500,000 USD","img":"https://assets.easybroker.com/property_images/6285495/111649421/EB-XD5495.jpeg?height=300&s=5792327883cd246c&version=1790976718&width=450","agent":"Tanya Vega","lat":"32.3058655879","lng":"-117.0443601011"},{"id":"departamentos-en-venta-centro-de-rosarito","op":"venta","kind":"depa","label":"Departamento","zona":"costa","title":"Departamentos en Venta | Centro de Rosarito","loc":"Anexa Obrera, Playas de Rosarito","price":"$263,000 USD","img":"https://assets.easybroker.com/property_images/6253561/110980637/EB-XA3561.jpeg?height=300&version=1789673060&width=450","agent":"Tanya Vega","lat":"32.3534251213","lng":"-117.0629618768"},{"id":"casa-estilo-santorini-con-vista-al-mar","op":"venta","kind":"casa","label":"Casa","zona":"tijuana","title":"Casa Estilo Santorini con Vista al Mar","loc":"Hacienda Del Mar, Tijuana","price":"$4,850,000 MXN","rec":2,"m2":"296","img":"https://assets.easybroker.com/property_images/6209397/110386213/EB-WV9397.jpeg?height=300&s=47d0fca7b9a73110&version=1788416059&width=450","agent":"Tanya Vega","lat":"32.4275958818","lng":"-117.0939005177"},{"id":"vive-el-estilo-de-vida-costero-que-siempre-sonaste","op":"venta","kind":"casa","label":"Casa","zona":"tijuana","title":"Vive el estilo de vida costero que siempre soñaste","loc":"Punta Bandera, Tijuana","price":"$750,000 USD","rec":4,"ban":5,"m2":"307.5","img":"https://assets.easybroker.com/property_images/6146147/109018947/EB-WP6147.jpeg?height=300&version=1785779765&width=450","agent":"Tanya Vega","lat":"32.4536695045","lng":"-117.1115246366"},{"id":"departamento-en-venta-en-piramide-del-mar-rosarito-ensenada","op":"venta","kind":"depa","label":"Departamento","zona":"costa","title":"Departamento en venta en Piramide del Mar, Rosarito-Ensenada","loc":"Plaza del Mar, Playas de Rosarito","price":"$285,000 USD","m2":"95","img":"https://assets.easybroker.com/property_images/5962253/105054607/EB-VX2253.jpeg?height=300&s=264dd372abe0a9ff&version=1777336536&width=450","agent":"Tanya Vega","lat":"32.135152466","lng":"-116.8872084323"},{"id":"departamento-en-venta-en-kanab-playas-de-tijuana","op":"venta","kind":"depa","label":"Departamento","zona":"tijuana","title":"Departamento en venta en Kanab, Playas de Tijuana","loc":"Costa Coronado Residencial, Tijuana","price":"$278,000 USD","m2":"127","img":"https://assets.easybroker.com/property_images/5887250/103550488/EB-VP7250.jpeg?height=300&s=b7374a8bdd768453&version=1774371806&width=450","agent":"Tanya Vega","lat":"32.5200787034","lng":"-117.1009998068"},{"id":"condominio-en-viento-residencial-1-recamara-tipo-loft","op":"venta","kind":"depa","label":"Departamento","zona":"costa","title":"Condominio en Viento Residencial, 1 recamara tipo loft","loc":"El Sauzal, Ensenada","price":"$360,000 USD","m2":"100","img":"https://assets.easybroker.com/property_images/5837345/102499061/EB-VK7345.jpeg?height=300&version=1772229689&width=450","agent":"Tanya Vega","lat":"31.8806359663","lng":"-116.6842073329"},{"id":"departamento-en-venta-en-ocean-view","op":"venta","kind":"casa","label":"Casa","zona":"costa","title":"Casa con Ocean view en venta, Las Gaviotas","loc":"Las Gaviotas, Playas de Rosarito","price":"$10,000,000 MXN","m2":"230","img":"https://assets.easybroker.com/property_images/5836676/102484295/EB-VK6676.jpeg?height=300&s=815cdcbb57b3db0f&version=1772217340&width=450","agent":"Tanya Vega","lat":"32.253392","lng":"-116.962798"},{"id":"casas-en-venta-en-costa-baja-real-del-mar","op":"venta","kind":"casa","label":"Casa","zona":"tijuana","title":"Casas en venta en Costa Baja, Real del Mar","loc":"Real del Mar, Tijuana","price":"$720,500 USD","m2":"317","img":"https://assets.easybroker.com/property_images/5692695/99447138/EB-UW2695.jpg?height=300&s=d62cd6e0da5ea9ae&version=1765387489&width=450","agent":"Tanya Vega","lat":"32.4429680971","lng":"-117.0938771006"},{"id":"casas-en-venta-en-punta-piedra","op":"venta","kind":"casa","label":"Casa","zona":"costa","title":"Casas en venta en Punta Piedra","loc":"Punta Piedra, Ensenada","price":"$453,000 USD","img":"https://assets.easybroker.com/property_images/5689402/99383386/EB-UV9402.jpg?height=300&s=b09af90e6c1307cd&version=1765243864&width=450","agent":"Tanya Vega","lat":"32.0846680812","lng":"-116.8791788835"},{"id":"departamentos-en-venta-en-ocean-view-real-del-mar","op":"venta","kind":"depa","label":"Departamento","zona":"tijuana","title":"Departamentos en venta en Costa Baja en Real del Mar.","loc":"Real del Mar, Tijuana","price":"$473,000 USD","m2":"155","img":"https://assets.easybroker.com/property_images/5681106/99216147/EB-UV1106.jpg?height=300&s=0ebbfdc7111fa69e&version=1764802084&width=450","agent":"Tanya Vega","lat":"32.4435588556","lng":"-117.0934107303"},{"id":"casa-en-renta-colonia-roma-roma","op":"renta","kind":"casa","label":"Casa","zona":"tijuana","title":"Casa en renta, Col. Roma","loc":"Roma, Tijuana","price":"$1,350 USD","rec":3,"ban":2,"m2":"261.34","img":"https://assets.easybroker.com/property_images/1185888/17622696/EB-DN5888.jpg?height=300&s=8bbfc6d016b86dd7&version=1564705682&width=450","agent":"Marycarmen Encinas","lat":"32.5286044","lng":"-117.0578465"},{"id":"casa-en-renta-fracc-altabrisa-altabrisa","op":"renta","kind":"casa","label":"Casa","zona":"tijuana","title":"Casa en renta, Fracc. Otay Altabrisa","loc":"Altabrisa, Tijuana","price":"$1,600 USD","rec":3,"ban":2,"m2":"318","img":"https://assets.easybroker.com/property_images/4776698/80877403/EB-RI6698.jpeg?height=300&s=f2ee1c1312dfe8c1&version=1728061066&width=450","agent":"Sandra Morales","lat":"32.5313467648","lng":"-116.9746595596"},{"id":"casa-en-renta-privada-ankara","op":"renta","kind":"casa","label":"Casa","zona":"tijuana","title":"Casa en renta, Privada Ankara","loc":"La Joya Este, Tijuana","price":"$1,600 USD","rec":3,"ban":2,"m2":"187.39","img":"https://assets.easybroker.com/property_images/3550100/58591626/EB-MQ0100.jpg?height=300&s=061f9d11ff0d78a3&version=1678148515&width=450","agent":"Verónica Salcedo","lat":"32.4889497874","lng":"-116.9450426102"},{"id":"casa-en-renta-col-sanchez-taboada","op":"renta","kind":"casa","label":"Casa","zona":"tijuana","title":"Casa en renta, Col. Sánchez Taboada","loc":"Sanchez Taboada Produtsa, Tijuana","price":"$19,000 MXN","rec":3,"ban":2,"m2":"180","img":"https://assets.easybroker.com/property_images/5755993/110183788/EB-VC5993.jpg?height=300&version=1787965036&width=450","agent":"Selene Vega","lat":"32.4673848","lng":"-116.9706097"},{"id":"oficinas-en-venta-ovva-business","op":"venta","kind":"oficina","label":"Oficina","zona":"tijuana","title":"Oficinas en venta, OVVA Business","loc":"Zona Urbana Río Tijuana, Tijuana","price":"$119,000 USD","m2":"33","img":"https://assets.easybroker.com/property_images/3480819/56461126/EB-MJ0819.png?height=300&s=fe1da110dc17ddae&version=1673551565&width=450","agent":"Marcel Gutiérrez","lat":"32.5191888682","lng":"-117.0136855293"},{"id":"oficina-en-city-center-zona-rio","op":"venta","kind":"oficina","label":"Oficina","zona":"tijuana","title":"Oficina en City Center , Zona Rio","loc":"Zona Urbana Río Tijuana, Tijuana","price":"$160,500 USD","m2":"53.4","img":"https://assets.easybroker.com/property_images/1944037/29728334/EB-GL4037.png?height=300&s=5b907a2fdd8c7860&version=1610389771&width=450","agent":"Genaro Valladolid","lat":"32.5298678363","lng":"-117.027472264"},{"id":"preventa-oficinas-y-consultorios-de-61m2-torre-corporativa-eugenia","op":"venta","kind":"oficina","label":"Oficina","zona":"tijuana","title":"Preventa Oficinas y Consultorios de 61m2 - Torre Corporativa Eugenia","loc":"Calete, Tijuana","price":"$239,000 USD","m2":"61","img":"https://assets.easybroker.com/property_images/4696953/79303731/EB-RA6953.jpg?height=300&s=ef7dacd3c975c738&version=1724716831&width=450","agent":"Aarón Sanz","lat":"32.5183203829","lng":"-117.0184707782"},{"id":"oficina-corporativa-en-venta-zona-urbana-rio-tijuana","op":"venta","kind":"oficina","label":"Oficina","zona":"tijuana","title":"Oficina Corporativa en Venta","loc":"Zona Urbana Río Tijuana, Tijuana","m2":"138","img":"https://assets.easybroker.com/property_images/6094544/107921517/EB-WK4544.jpeg?height=300&s=1815f397f5f949fa&version=1783379185&width=450","agent":"Aarón Sanz","lat":"32.5242748177","lng":"-117.0196415778"},{"id":"oficina-en-venta-de-68m2-en-city-center","op":"venta","kind":"oficina","label":"Oficina","zona":"tijuana","title":"Oficina en venta de 68m2 en City Center","loc":"Zona Urbana Río Tijuana, Tijuana","price":"$307,575 USD","m2":"68.35","img":"https://assets.easybroker.com/property_images/5712623/99865521/EB-UY2623.png?height=300&s=ed3a09f216bc73e7&version=1766533789&width=450","agent":"Aarón Sanz","lat":"32.5298998","lng":"-117.0276539"},{"id":"oficina-en-venta-en-central-toreo-76m2","op":"venta","kind":"oficina","label":"Oficina","zona":"tijuana","title":"Oficina en venta en Central Toreo, 76m2","loc":"Calete, Tijuana","price":"$320,000 USD","m2":"76","img":"https://assets.easybroker.com/property_images/5388971/93145534/EB-TR8971.jpg?height=300&s=b6f562c577921f53&version=1752782373&width=450","agent":"Aarón Sanz","lat":"32.5177793081","lng":"-117.0187319385"},{"id":"preventa-oficinas-y-consultorios-de-101m2-torre-corporativa-eugenia","op":"venta","kind":"oficina","label":"Oficina","zona":"tijuana","title":"Preventa Oficinas y Consultorios de 101m2 - Torre Corporativa Eugenia","loc":"Calete, Tijuana","price":"$395,000 USD","m2":"101","img":"https://assets.easybroker.com/property_images/4696984/79304227/EB-RA6984.jpg?height=300&version=1724717434&width=450","agent":"Aarón Sanz","lat":"32.5181021","lng":"-117.0179839"},{"id":"preventa-oficinas-y-consultorios-de-284m2-torre-corporativa-eugenia","op":"venta","kind":"oficina","label":"Oficina","zona":"tijuana","title":"Preventa Oficinas y Consultorios de 284m2 - Torre Corporativa Eugenia","loc":"Calete, Tijuana","price":"$1,112,712 USD","m2":"284","img":"https://assets.easybroker.com/property_images/4697002/79304599/EB-RA7002.png?height=300&s=6cea91c40b855923&version=1724717825&width=450","agent":"Aarón Sanz","lat":"32.5184922713","lng":"-117.018556611"},{"id":"preventa-oficinas-y-consultorios-de-600m2-torre-corporativa-eugenia","op":"venta","kind":"oficina","label":"Oficina","zona":"tijuana","title":"Preventa Oficinas y Consultorios de 600m2 - Torre Corporativa Eugenia","loc":"Calete, Tijuana","price":"$2,350,800 USD","m2":"600","img":"https://assets.easybroker.com/property_images/4697017/79304824/EB-RA7017.png?height=300&s=a1a7ea9486ecc379&version=1724718149&width=450","agent":"Aarón Sanz","lat":"32.5184741778","lng":"-117.0187175481"},{"id":"piso-corporativo-completo-ovva-nivel-19-600-m-zona-rio-tijuana","op":"venta","kind":"oficina","label":"Oficina","zona":"tijuana","title":"Piso Corporativo Completo - OVVA | Nivel 19 | 600 m² | Zona Río, Tijuana","loc":"Zona Urbana Río Tijuana, Tijuana","price":"$59,800,000 MXN","m2":"600","img":"https://assets.easybroker.com/property_images/6111680/108285502/EB-WM1680.png?height=300&s=bfcc42571328c6ce&version=1784132960&width=450","agent":"Sandra Arias","lat":"32.5192565398","lng":"-117.0140743495"},{"id":"preventa-oficinas-y-consultorios-de-1297m2-torre-corporativa-eugenia","op":"venta","kind":"oficina","label":"Oficina","zona":"tijuana","title":"Preventa Oficinas y Consultorios de 1297m2 - Torre Corporativa Eugenia","loc":"Calete, Tijuana","price":"$5,081,646 USD","m2":"1,297","img":"https://assets.easybroker.com/property_images/4697046/79305342/EB-RA7046.jpg?height=300&s=70edbaa1820b2d5b&version=1724718731&width=450","agent":"Aarón Sanz","lat":"32.5180489796","lng":"-117.0185138598"},{"id":"oficinas-exclusivas-en-preventa-en-monterra-park-en-3ra-etapa-del-rio-tijuana","op":"venta","kind":"oficina","label":"Oficina","zona":"tijuana","title":"Oficinas Corporativas en Preventa.","loc":"Río Tijuana 3a Etapa, Tijuana","m2":"56","img":"https://assets.easybroker.com/property_images/6331779/112573630/EB-XI1779.png?height=300&s=1b73bf15c514c2f0&version=1792803658&width=450","agent":"Aarón Sanz","lat":"32.4863235478","lng":"-116.9259018686"},{"id":"edificio-en-venta-en-blvd-bellas-artes-otay","op":"venta","kind":"edificio","label":"Edificio","zona":"tijuana","title":"Edificio en venta en Blvd. Bellas Artes Otay","loc":"Garita Otay, Tijuana","m2":"1,244.69","img":"https://assets.easybroker.com/property_images/4658845/79500652/EB-QW8845.jpg?height=300&s=04e405bc65478b8d&version=1725048199&width=450","agent":"Pablo Avila","lat":"32.5435465","lng":"-116.9426053"},{"id":"edificio-en-venta-ruta-hidalgo","op":"venta","kind":"edificio","label":"Edificio","zona":"tijuana","title":"Edificio en venta, Ruta Hidalgo","loc":"Mariano Matamoros (Centro), Tijuana","price":"$11,000,000 MXN","m2":"450","img":"https://assets.easybroker.com/property_images/4427423/73977993/EB-PZ7423.jpg?height=300&s=b40e3b34e4496272&version=1713306624&width=450","agent":"Carlos Ochoa","lat":"32.4828410189","lng":"-116.8722099046"},{"id":"plaza-comercial-en-ermita-y-alba-roja-en-venta","op":"venta","kind":"edificio","label":"Edificio","zona":"tijuana","title":"Plaza Comercial en Ermita y Alba Roja En Venta","loc":"Monte Bello, Tijuana","price":"$1,000,000 USD","m2":"600","img":"https://assets.easybroker.com/property_images/4715770/79678372/EB-RC5770.jpg?height=300&version=1725469220&width=450","agent":"Genaro Valladolid","lat":"32.4972932425","lng":"-116.9819508871"},{"id":"venta-de-edificio-de-ocho-condominios-en-privada","op":"venta","kind":"edificio","label":"Edificio","zona":"tijuana","title":"Venta de Edificio de Ocho Condominios en Privada","loc":"Real del Monte, Tijuana","price":"$2,100,000 USD","m2":"1,120","img":"https://assets.easybroker.com/property_images/4716413/79690010/EB-RC6413.jpg?height=300&s=a6f22f306e47139d&version=1725477530&width=450","agent":"Genaro Valladolid","lat":"32.4954110555","lng":"-116.9820573165"},{"id":"edificio-en-venta-de-7-000m2-en","op":"venta","kind":"edificio","label":"Edificio","zona":"tijuana","title":"Edificio en venta de 7,000m2 en Zona Río","loc":"Zona Urbana Río Tijuana, Tijuana","price":"$9,000,000 USD","m2":"7,000","img":"https://assets.easybroker.com/property_images/5924341/104308460/EB-VT4341.jpeg?height=300&s=ce94d15e702834c8&version=1775866452&width=450","agent":"Pablo Avila","lat":"32.5377651148","lng":"-117.0283499594"},{"id":"edificio-en-la-linea-internacional-san-ysidro","op":"venta","kind":"edificio","label":"Edificio","zona":"tijuana","title":"Edificio en la Linea Internacional San Ysidro","loc":"Zona Urbana Río Tijuana, Tijuana","price":"$16,850,000 USD","img":"https://assets.easybroker.com/property_images/1651511/24906692/EB-FI1511.jpeg?height=300&version=1594842099&width=450","agent":"Hector Bustamante","lat":"32.5378050016","lng":"-117.0288133713"},{"id":"edificio-en-renta-en-col-cacho","op":"renta","kind":"edificio","label":"Edificio","zona":"tijuana","title":"Edificio en renta en Col. Cacho","loc":"Dávila, Tijuana","price":"$10 USD","per":"por m²","m2":"1,616","img":"https://assets.easybroker.com/property_images/5712621/103749254/EB-UY2621.jpg?height=300&s=67d7ec149fdf28f5&version=1774652034&width=450","agent":"Aarón Sanz","lat":"32.5185075753","lng":"-117.0225285127"},{"id":"edificio-en-renta-plaza-minarete","op":"renta","kind":"edificio","label":"Edificio","zona":"tijuana","title":"Edificio en Renta- Plaza Minarete","loc":"Aviación, Tijuana","m2":"5,293.32","img":"https://assets.easybroker.com/property_images/4452025/74666628/EB-QC2025.jpg?height=300&s=c1682322f5cfea8a&version=1714768093&width=450","agent":"Pablo Avila","lat":"32.5166376689","lng":"-117.0084177798"},{"id":"edificio-para-centro-de-negocios-tecnologicos-en-zona-rio","op":"renta","kind":"edificio","label":"Edificio","zona":"tijuana","title":"Centro de Negocios Tecnológicos, edificio en renta en Zona Río","loc":"Revolución, Tijuana","price":"$25 USD","per":"por m²","m2":"1,200","img":"https://assets.easybroker.com/property_images/1739378/36230204/EB-FQ9378.jpg?height=300&s=1b3a8df67bd4b25a&version=1759870650&width=450","agent":"Aarón Sanz","lat":"32.5224013","lng":"-117.0189955"},{"id":"edificio-en-renta-en-blvd-bellas-artes-otay","op":"renta","kind":"edificio","label":"Edificio","zona":"tijuana","title":"Edificio en renta en Blvd. Bellas Artes Otay","loc":"Garita Otay, Tijuana","m2":"1,244.69","img":"https://assets.easybroker.com/property_images/4658860/79500814/EB-QW8860.jpg?height=300&s=5dd75483089da6ef&version=1725048302&width=450","agent":"Pablo Avila","lat":"32.5435465","lng":"-116.9426053"}];
+var TEAM=[{"div":"Dirección","name":"Hector Bustamante","role":"Director General","tel":"+526643648145","tel_fmt":"(664) 364 8145","email":"hector.bustamante@brg.mx","img":"hectorbustamante.jpg"},{"div":"Dirección","name":"Carlos Bustamante","role":"Director de Operaciones","tel":"+526643683465","tel_fmt":"(664) 368 3465","email":"carlos.bustamante@brg.mx","img":"carlosbustamante.jpg"},{"div":"División Residencial","name":"Marycarmen Encinas","role":"Asesora","tel":"+526641982859","tel_fmt":"(664) 198 2859","email":"marycarmen.encinas@brg.mx","img":"marycarmenencinas.jpg"},{"div":"División Residencial","name":"Elizabeth Muro","role":"Asesora","tel":"+526641700099","tel_fmt":"(664) 170 0099","email":"elizabeth.muro@brg.mx","img":"elizabethmuro.jpg"},{"div":"División Residencial","name":"Carla Jardines","role":"Asesora","tel":"+526643868076","tel_fmt":"(664) 386 8076","email":"carla.jardines@brg.mx","img":"carlajardines.jpg"},{"div":"División Residencial","name":"Mariela Barragán","role":"Asesora","tel":"+526642046728","tel_fmt":"(664) 204 6728","email":"mariela.barragan@brg.mx","img":"marielabarragan.jpg"},{"div":"División Residencial","name":"Verónica Salcedo","role":"Asesora","tel":"+526642467243","tel_fmt":"(664) 246 7243","email":"veronica.salcedo@brg.mx","img":"veronicasalcedo.jpg"},{"div":"División Residencial","name":"Martha Guerrero","role":"Asesora","tel":"+526643453679","tel_fmt":"(664) 345 3679","email":"martha.guerrero@brg.mx","img":"marthaguerrero.jpg"},{"div":"División Residencial","name":"Odette Valle","role":"Asesora","tel":"+526642363638","tel_fmt":"(664) 236 3638","email":"odette.valle@brg.mx","img":"odettevalle.jpg"},{"div":"División Residencial","name":"Selene Vega","role":"Asesora","tel":"+526642045960","tel_fmt":"(664) 204 5960","email":"selene.vega@brg.mx","img":"selenevega.jpg"},{"div":"División Residencial","name":"Sandra Morales","role":"Asesora","tel":"+526641131469","tel_fmt":"(664) 113 1469","email":"sandra.morales@brg.mx","img":"sandramorales.jpg"},{"div":"División Residencial","name":"Mayra Soltero","role":"Asesora","tel":"+526642359371","tel_fmt":"(664) 235 9371","email":"mayra-soltero@brg.mx","img":"mayrasoltero.jpg"},{"div":"División Residencial","name":"Joel Sánchez","role":"Asesor","tel":"+526643870605","tel_fmt":"(664) 387 0605","email":"joel.sanchez@brg.mx","img":"joelsanchez.jpg"},{"div":"División Residencial","name":"Angélica Montaño","role":"Asesora","tel":"+526641689500","tel_fmt":"(664) 168 9500","email":"angelica.montano@brg.mx","img":"angelicamontano.jpg"},{"div":"División Residencial","name":"Alfredo Jauregui","role":"Asesor","tel":"+526643709735","tel_fmt":"(664) 370 9735","email":"alfredo.jauregui@brg.mx","img":"alfredojauregui.jpg"},{"div":"División Comercial","name":"Carlos Ochoa","role":"Asesor","tel":"+526644989541","tel_fmt":"(664) 498 9541","email":"carlos.ochoa@brg.mx","img":"carlosochoa.jpg"},{"div":"División Comercial","name":"Marco Nuño","role":"Asesor","tel":"+526641695283","tel_fmt":"(664) 169 5283","email":"marco.nuno@brg.mx","img":"marconuno.jpg"},{"div":"División Comercial","name":"Genaro Valladolid","role":"Asesor","tel":"+526643688842","tel_fmt":"(664) 368 8842","email":"genaro@brg.mx","img":"genarovalladolid.jpg"},{"div":"División Comercial","name":"Pablo Ávila","role":"Asesor","tel":"+526642200858","tel_fmt":"(664) 220 0858","email":"pablo.avila@brg.mx","img":"pabloavila.jpg"},{"div":"División Comercial","name":"Aaron Sanz","role":"Asesor","tel":"+526642219942","tel_fmt":"(664) 221 9942","email":"aaron.sanz@brg.mx","img":"aaronsanchez.jpg"},{"div":"División Comercial","name":"Marcel Gutiérrez","role":"Asesor","tel":"+526647559721","tel_fmt":"(664) 755 9721","email":"marcel.gutierrez@brg.mx","img":"marcelgutierrez.jpg"},{"div":"División Valle de Guadalupe","name":"Billy Woolrich","role":"Asesor","tel":"+526461486846","tel_fmt":"(646) 148 6846","email":"billy.woolrich@brg.mx","img":"billywoolrich.jpg"},{"div":"División Zona Costa","name":"Tanya Vega","role":"Asesora","tel":"+526641711072","tel_fmt":"(664) 171 1072","email":"tanya.vega@brg.mx","img":"tanyavega.jpg"},{"div":"Central de Condominios","name":"Aleida Luna","role":"Directora","tel":"+526641120183","tel_fmt":"(664) 112 0183","email":"aleida.luna@brg.mx","img":"aleidaluna.jpg"},{"div":"Central de Condominios","name":"Cecilia Esquivel","role":"Asesora","tel":"+526643340802","tel_fmt":"(664) 334 0802","email":"cecilia.esquivel@brg.mx","img":"ceciliaesquivel.jpg"},{"div":"Central de Condominios","name":"Daniel Pérez","role":"Asesor","tel":"+526643896540","tel_fmt":"(664) 389 6540","email":"daniel.perez@brg.mx","img":"danielperez.jpg"},{"div":"Central de Condominios","name":"Daniel Álvarez","role":"Asesor","tel":"+526642057710","tel_fmt":"(664) 205 7710","email":"daniel.alvarez@brg.mx","img":"danielalvarez.jpg"},{"div":"Central de Condominios","name":"Erika Gómez","role":"Asesora","tel":"+526645904922","tel_fmt":"(664) 590 4922","email":"erika.gomez@brg.mx","img":"erikagomez.jpg"},{"div":"Central de Condominios","name":"Sheila García","role":"Asesora","tel":"+526643862798","tel_fmt":"(664) 386 2798","email":"sheila.garcia@brg.mx","img":"sheilagarcia.jpg"},{"div":"Central de Condominios","name":"Frida Rivera","role":"Asesora","tel":"+526643018656","tel_fmt":"(664) 301 8656","email":"frida.rivera@brg.mx","img":"fridarivera.jpg"},{"div":"Central de Condominios","name":"Cristobal Meza","role":"Asesor","tel":"+526641097773","tel_fmt":"(664) 109 7773","email":"cristobal.meza@brg.mx","img":"cristobalmeza.jpg"},{"div":"OVVA Residences - OVVA Business","name":"Abril Rodríguez","role":"Directora","tel":"+526641990887","tel_fmt":"(664) 199 0887","email":"abril.rodriguez@brg.mx","img":"abrilrodriguez.jpg"},{"div":"OVVA Residences - OVVA Business","name":"Marina Zataraín","role":"Asesora","tel":"+526646284245","tel_fmt":"(664) 628 4245","email":"marina.zatarain@brg.mx","img":"marinazatarain.jpg"},{"div":"OVVA Residences - OVVA Business","name":"Priscila Rujana","role":"Asesora","tel":"+526643068820","tel_fmt":"(664) 306 8820","email":"priscila.rujana@brg.mx","img":"priscilarujana.jpg"},{"div":"OVVA Residences - OVVA Business","name":"Alejandra Macías","role":"Asesora","tel":"+526643742766","tel_fmt":"(664) 374 2766","email":"alejandra.macias@brg.mx","img":"alejandramacias.jpg"},{"div":"OVVA Residences - OVVA Business","name":"Diego Salgado","role":"Asesor","tel":"+526643648747","tel_fmt":"(664) 364 8747","email":"diego.salgado@brg.mx","img":"diegosalgado.jpg"},{"div":"Porttica","name":"Yadira Álvarez","role":"Directora","tel":"+526631226069","tel_fmt":"(663) 122 6069","email":"yadira.alvarez@brg.mx","img":"yadiraalvarez.jpg"},{"div":"Porttica","name":"Nancy Velázquez","role":"Asesora","tel":"+526646514820","tel_fmt":"(664) 651 4820","email":"nancy.velazquez@brg.mx","img":"nancyvelazquez.jpg"},{"div":"Porttica","name":"Daniela Acosta","role":"Asesora","tel":"+526621913084","tel_fmt":"(662) 191 3084","email":"daniela.acosta@brg.mx","img":"danielaacosta.jpg"},{"div":"Porttica","name":"Karina Moreno","role":"Asesora","tel":"+526645710881","tel_fmt":"(664) 571 0881","email":"karina.moreno@brg.mx","img":"karinamoreno.jpg"},{"div":"Porttica","name":"Angelica González","role":"Asesora","tel":"+526641691684","tel_fmt":"(664) 169 1684","email":"angelica.gonzalez@brg.mx","img":"angelicagonzalez.jpg"},{"div":"Porttica","name":"Javier González","role":"Asesor","tel":"+524494811792","tel_fmt":"(449) 481 1792","email":"javier.gonzalez@brg.mx","img":"javiergonzalez.jpg"},{"div":"Porttica","name":"Erick Bada","role":"Asesor","tel":"+526641634954","tel_fmt":"(664) 163 4954","email":"erick.bada@brg.mx","img":"erickbada.jpg"},{"div":"Monterra Park","name":"Mara Camacho","role":"Directora","tel":"+526642860279","tel_fmt":"(664) 286 0279","email":"mara.camacho@brg.mx","img":"maracamacho.jpg"},{"div":"Monterra Park","name":"Melissa Aispuro","role":"Asesora","tel":"+526631034644","tel_fmt":"(663) 103 4644","email":"melissa.aispuro@brg.mx","img":"melissaaispuro.jpg"},{"div":"Monterra Park","name":"Gabriela Vega","role":"Asesora","tel":"+526642835993","tel_fmt":"(664) 283 5993","email":"gabriela.vega@brg.mx","img":"gabrielavega.jpg"},{"div":"Monterra Park","name":"Alba Valdez","role":"Asesora","tel":"+526646288791","tel_fmt":"(664) 628 8791","email":"alba.valdez@brg.mx","img":"albavaldez.jpg"},{"div":"Monterra Park","name":"Andrea Cales","role":"Asesora","tel":"+526651106891","tel_fmt":"(665) 110 6891","email":"andrea.cales@brg.mx","img":"andreacales.jpg"},{"div":"Monterra Park","name":"Nesby Rosales","role":"Asesora","tel":"+526648527551","tel_fmt":"(664) 852 7551","email":"andrea.cales@brg.mx","img":"nesbyrosales.jpg"},{"div":"The Landmark Tijuana","name":"Cindy Martínez","role":"Directora","tel":"+526643396478","tel_fmt":"(664) 339 6478","email":"cindy.martinez@brg.mx","img":"cindymartinez.jpg"},{"div":"The Landmark Tijuana","name":"Alejandro Acosta","role":"Asesor","tel":"+526651063387","tel_fmt":"(665) 106 3387","email":"alejandro.acosta@brg.mx","img":"alejandroacosta.jpg"},{"div":"The Landmark Tijuana","name":"Criztal Quijada","role":"Asesora","tel":"+526611079150","tel_fmt":"(661) 107 9150","email":"criztal.quijada@brg.mx","img":"criztalquijada.jpg"},{"div":"The Landmark Tijuana","name":"Israel Vazquez","role":"Asesor","tel":"+526631108909","tel_fmt":"(663) 110 8909","email":"israel.vazquez@brg.mx","img":"israelvazquez.jpg"},{"div":"LUCA","name":"Adriana Gutiérrez","role":"Directora","tel":"+526643644634","tel_fmt":"(664) 364 4634","email":"adriana.gutierrez@brg.mx","img":"adrianagutierrez.jpg"},{"div":"LUCA","name":"Marbella Gamboa","role":"Asesora","tel":"+526644426180","tel_fmt":"(664) 442 6180","email":"marbella.gamboa@brg.mx","img":"marbellagamboa.jpg"},{"div":"LUCA","name":"Karen Guerrero","role":"Asesora","tel":"+526643852703","tel_fmt":"(664) 385 2703","email":"karen.guerrero@brg.mx","img":"karenguerrero.jpg"},{"div":"LUCA","name":"Nora Romo","role":"Asesora","tel":"+526641683827","tel_fmt":"(664) 168 3827","email":"nora.romo@brg.mx","img":"noraromo.jpg"},{"div":"LUCA","name":"Bedem Sandoval","role":"Asesora","tel":"+526641823640","tel_fmt":"(664) 182 3640","email":"bedem.sandoval@brg.mx","img":"bedemsandoval.jpg"},{"div":"LUCA","name":"Juan Carlos Rivera","role":"Asesor","tel":"+526644121983","tel_fmt":"(664) 412 1983","email":"juancarlos.rivera@brg.mx","img":"juancarlosrivera.jpg"},{"div":"The Wavve / NAOS","name":"Jaime Ponce","role":"Director","tel":"+526643683419","tel_fmt":"(664) 368 3419","email":"jaime.ponce@brg.mx","img":"jaimeponce.jpg"},{"div":"The Wavve / NAOS","name":"Valeria Guerrero","role":"Asesora","tel":"+526643381774","tel_fmt":"(664) 338 1774","email":"valeria.guerrero@brg.mx","img":"valeriaguerrero.jpg"},{"div":"The Wavve / NAOS","name":"Liz Osuna","role":"Asesora","tel":"+526645117068","tel_fmt":"(664) 511 7068","email":"liz.osuna@brg.mx","img":"lizosuna.jpg"},{"div":"The Wavve / NAOS","name":"Alejandra Garrido","role":"Asesora","tel":"+526641540947","tel_fmt":"(664) 154 0947","email":"alejandra.garrido@brg.mx","img":"alejandragarrido.jpg"},{"div":"The Wavve / NAOS","name":"Verenice Maldonado","role":"Asesora","tel":"+526645697474","tel_fmt":"(664) 569 7474","email":"verenice.maldonado@brg.mx","img":"verenicemaldonado.jpg"},{"div":"The Wavve / NAOS","name":"Carmen Ruvalcaba","role":"Asesora","tel":"+526631188353","tel_fmt":"(663) 118 8353","email":"carmen.ruvalcaba@brg.mx","img":"carmenruvalcaba.jpg"},{"div":"The Wavve / NAOS","name":"Miguel Sedano","role":"Asesor","tel":"+526642292009","tel_fmt":"(664) 229 2009","email":"miguel.sedano@brg.mx","img":"miguelsedano.jpg"},{"div":"The Wavve / NAOS","name":"Armando Pelayo","role":"Asesor","tel":"+619606900","tel_fmt":"619 606 900","email":"armando.pelayo@brg.mx","img":"armandopelayo.jpg"},{"div":"Camino Thompson","name":"Mario Salinas","role":"Director","tel":"+526461442393","tel_fmt":"(646) 144 2393","email":"mario.salinas@brg.mx","img":"mariosalinas.jpg"},{"div":"Camino Thompson","name":"Erika Malagón","role":"Asesora","tel":"+526462237147","tel_fmt":"(646) 223 7147","email":"erika.malagon@brg.mx","img":"erikamalagon.jpg"},{"div":"Camino Thompson","name":"Adela Nava","role":"Asesora","tel":"+526461017143","tel_fmt":"(646) 101 7143","email":"adela.nava@brg.mx","img":"adelanava.jpg"},{"div":"Camino Thompson","name":"Talpa Fuentes","role":"Asesora","tel":"+16462402091","tel_fmt":"(646) 240 2091","email":"adela.nava@brg.mx","img":"talpafuentes.jpg"},{"div":"Custom Credit","name":"Tania Vázquez","role":"Directora","tel":"+526641299491","tel_fmt":"(664) 129 9491","email":"tania.customcredit@brg.mx","img":"taniavazquez.jpg"},{"div":"Custom Credit","name":"Hugo Reyes","role":"Asesor","tel":"+526646974323","tel_fmt":"(664) 697 4323","email":"hugo.reyes@brg.mx","img":"hugoreyes.jpg"},{"div":"Custom Credit","name":"Alma Toledo","role":"Asesora","tel":"+526648029678","tel_fmt":"(664) 802 9678","email":"alma.toledo@brg.mx","img":"almatoledo.jpg"},{"div":"Custom Credit","name":"Lysbeth Colunga","role":"Asesora","tel":"+526646742536","tel_fmt":"(664) 674 2536","email":"lysbeth.colunga@brg.mx","img":"lysbethcolunga.jpg"},{"div":"Custom Credit","name":"Claudia Lozano","role":"Administradora","tel":"+526642645388","tel_fmt":"(664) 264 5388","email":"claudia.lozano@brg.mx","img":"claudialozano.jpg"},{"div":"Postventa","name":"Vanessa Noriega","role":"Directora","tel":"+526641568929","tel_fmt":"(664) 156 8929","email":"vanessa.noriega@brg.mx","img":"vanessanoriega.jpg"},{"div":"Postventa","name":"Celina Márquez","role":"Supervisora","tel":"+526642355483","tel_fmt":"(664) 235 5483","email":"celina.marquez@brg.mx","img":"celinamarquez.jpg"},{"div":"Postventa","name":"Montserrat Nuñez","role":"Supervisora","tel":"+526632150036","tel_fmt":"(663) 215 0036","email":"monserrat.nunez@brg.mx","img":"montserratnunez.jpg"},{"div":"Administración y Finanzas","name":"Adriana Gastelum","role":"Directora","tel":"+526642054245","tel_fmt":"(664) 205 4245","email":"adriana.gastelum@brg.mx","img":"adrianagastelum.jpg"},{"div":"Administración y Finanzas","name":"Shantal Méndez","role":"Contabilidad","tel":"+526642419620","tel_fmt":"(664) 241 9620","email":"shantal.mendez@brg.mx","img":"shantalmendez.jpg"},{"div":"Administración y Finanzas","name":"Elizabeth Morales","role":"Contabilidad","tel":"+526644913455","tel_fmt":"(664) 491 3455","email":"elizabeth.morales@brg.mx","img":"elizabethmorales.jpg"},{"div":"Servicio al Cliente","name":"Melissa Marshall","role":"Administración de Ventas","tel":"+526643118382","tel_fmt":"(664) 311 8382","email":"melissa.marshall@brg.mx","img":"melissamarshall.jpg"},{"div":"Servicio al Cliente","name":"Alondra Carrillo","role":"Administración de Ventas","tel":"+526642606946","tel_fmt":"(664) 260 6946","email":"alondra.carrillo@brg.mx","img":"alondracarrillo.jpg"},{"div":"Servicio al Cliente","name":"Areli Ruiz","role":"Administración de Ventas","tel":"+526645141417","tel_fmt":"(664) 514 1417","email":"areli.ruiz@brg.mx","img":"areliruiz.jpg"},{"div":"Servicio al Cliente","name":"Kelly Moreno","role":"Administración de Ventas","tel":"+526643626950","tel_fmt":"(664) 362 6950","email":"kelly.moreno@brg.mx","img":"kellymoreno.jpg"},{"div":"Servicio al Cliente","name":"Sara Galeana","role":"Administración de Ventas","tel":"+526632100387","tel_fmt":"(663) 210 0387","email":"sara.galeana@brg.mx","img":"saragaleana.jpg"},{"div":"Servicio al Cliente","name":"Karen Parra","role":"Administración de Ventas","tel":"+526645169169","tel_fmt":"(664) 516 9169","email":"karen.parra@brg.mx","img":"karenparra.jpg"},{"div":"Servicio al Cliente","name":"Cecilia Magaña","role":"Administración de Ventas","tel":"+526644346588","tel_fmt":"(664) 434 6588","email":"cecilia.magana@brg.mx","img":"ceciliamagana.jpg"},{"div":"Servicio al Cliente","name":"Jenifer Salas","role":"Administración de Ventas","tel":"+526631289687","tel_fmt":"(663) 128 9687","email":"jenifer.salas@brg.mx","img":"jenifersalas.jpg"},{"div":"Servicio al Cliente","name":"Sandra Arias","role":"Administración de Ventas","tel":"+526647276049","tel_fmt":"(664) 727 6049","email":"sandra.arias@brg.mx","img":"sandraarias.jpg"},{"div":"Servicio al Cliente","name":"Iris Dionicio","role":"Administradora de Cuentas","tel":"+526647180425","tel_fmt":"(664) 718 0425","email":"iris.dionicio@brg.mx","img":"irisdionicio.jpg"},{"div":"Servicio al Cliente","name":"Emmanuel Chavez","role":"Servicio al Cliente","tel":"+526611460222","tel_fmt":"(661) 146 0222","email":"emmanuel.chavez@brg.mx","img":"emmanuelchavez.jpg"},{"div":"Servicio al Cliente","name":"Michelle Rodriguez","role":"Servicio al Cliente","tel":"+526641041351","tel_fmt":"(664) 104 1351","email":"michelle.rodriguez@brg.mx","img":"michellerodriguez.jpg"},{"div":"Servicio al Cliente","name":"Edith Marquez","role":"Servicio al Cliente","tel":"+526645773404","tel_fmt":"(664) 577 3404","email":"edith.marquez@brg.mx","img":"edithmarquez.jpg"},{"div":"Mercadotecnia","name":"Pablo Serrano","role":"Director","tel":"+526644906886","tel_fmt":"(664) 490 6886","email":"pablo.serrano@brg.mx","img":"pabloserrano.jpg"},{"div":"Mercadotecnia","name":"Natalia López","role":"Desarrollo Web","tel":"+526642195610","tel_fmt":"(664) 219 5610","email":"natalia.lopez@brg.mx","img":"nattfigueroa.jpg"},{"div":"Mercadotecnia","name":"Alejandra Ochoa","role":"Diseñadora Gráfica","tel":"+526643370369","tel_fmt":"(664) 337 0369","email":"alejandra.ochoa@brg.mx","img":"alejandraochoa.jpg"},{"div":"Mercadotecnia","name":"Carolina Izabal","role":"Diseñadora Gráfica","tel":"+526643037622","tel_fmt":"(664) 303 7622","email":"carolina.izabal@brg.mx","img":"carolinaizabal.jpg"},{"div":"Mercadotecnia","name":"Alejandro Ramos","role":"Diseñador Multimedia","tel":"+526643115396","tel_fmt":"(664) 311 5396","email":"alejandro.ramos@brg.mx","img":"alejandroramos.jpg"},{"div":"Mercadotecnia","name":"Natali Juarez","role":"Diseñadora Multimedia","tel":"+526641735672","tel_fmt":"(664) 173 5672","email":"natali.juarez@brg.mx","img":"natalijuarez.jpg"},{"div":"Mercadotecnia","name":"Sara Mendiola","role":"Diseñadora Gráfica de Milk","tel":"+526645562677","tel_fmt":"(664) 556 2677","email":"sara.mendiola@brg.mx","img":"saramendiola.jpg"}];
+
+var SLIDES=[
+ {n:'Luca Condos',img:'011-_departamentos_en_tijuanna.png',lbl:'Proyecto destacado',cta:'Ver proyectos',href:'#/proyectos'},
+ {n:'PORTTICA',img:'008-_departamentos_en_tijuanna.png',lbl:'Proyecto destacado',cta:'Ver proyectos',href:'#/proyectos'},
+ {n:'Camino Thompson',img:'Thompson.png',lbl:'Valle de Guadalupe',cta:'Ver proyectos',href:'#/proyectos'},
+ {n:'Bitte',img:'012-_departamentos_en_tijuanna.png',lbl:'Proyecto destacado',cta:'Ver proyectos',href:'#/proyectos'},
+ {n:'The Landmark',img:'001_-_slider.png',lbl:'Proyecto destacado',cta:'Ver proyectos',href:'#/proyectos'},
+ {n:'Locales comerciales',img:'005-_departamentos_en_tijuanna.png',lbl:'Comercial',cta:'Ver oficinas y locales',href:'#/propiedades?kind=oficina'},
+ {n:'Monterra Park',img:'monterra.jpg',lbl:'Proyecto destacado',cta:'Ver proyectos',href:'#/proyectos'},
+ {n:'Créditos',img:'014-_departamentos_en_tijuanna.png',lbl:'Financiamiento',cta:'Ver opciones',href:'#/proyectos'},
+ {n:'Casas y departamentos',img:'003_-_slider.png',lbl:'Residencial',cta:'Ver propiedades',href:'#/propiedades?op=venta'},
+ {n:'Central de Condominios',img:'central_de_condominos_-_departamentos_en_venta.jpg',lbl:'Todos los proyectos',cta:'Ver proyectos',href:'#/proyectos'},
+ {n:'OVVA Residences',img:'009-_departamentos_en_tijuanna.png',lbl:'Proyecto destacado',cta:'Ver proyectos',href:'#/proyectos'},
+ {n:'Zona Costa',img:'Slider_BRGmx-ZonaCosta.png',lbl:'Rosarito y Ensenada',cta:'Ver propiedades',href:'#/propiedades?zona=costa'},
+ {n:'The Wavve',img:'007-_departamentos_en_tijuanna.png',lbl:'Proyecto destacado',cta:'Ver proyectos',href:'#/proyectos'},
+ {n:'Sideways Living',img:'006-_departamentos_en_tijuanna.png',lbl:'Proyecto destacado',cta:'Ver proyectos',href:'#/proyectos'},
+ {n:'NAOS Resort Living',img:'naos-2025.jpg',lbl:'Proyecto destacado',cta:'Ver proyectos',href:'#/proyectos'}
+];
+var PROJECTS=[
+ {n:'The Landmark',img:'001_-_slider.png',url:'https://thelandmarktijuana.com/'},
+ {n:'Luca Condos',img:'011-_departamentos_en_tijuanna.png',url:'https://www.brg.mx/luca/'},
+ {n:'PORTTICA',img:'008-_departamentos_en_tijuanna.png',url:'https://porttica.com/'},
+ {n:'Camino Thompson',img:'Thompson.png',url:'https://caminothompson.mx/'},
+ {n:'Bitte',img:'012-_departamentos_en_tijuanna.png',url:'https://bittetijuana.mx/'},
+ {n:'Monterra Park',img:'monterra.jpg',url:'https://monterra.mx'},
+ {n:'OVVA Residences',img:'009-_departamentos_en_tijuanna.png',url:'https://www.brg.mx/ovva/'},
+ {n:'The Wavve',img:'007-_departamentos_en_tijuanna.png',url:'https://www.thewavvebaja.com/'},
+ {n:'Sideways Living',img:'006-_departamentos_en_tijuanna.png',url:'https://brg.mx/sideways'},
+ {n:'NAOS Resort Living',img:'naos-2025.jpg',url:'https://www.naosresortliving.com/'}
+];
+var KINDS={casa:'Casas',depa:'Departamentos',oficina:'Oficinas',edificio:'Edificios'};
+var ZONAS={tijuana:'Tijuana',costa:'Rosarito y Ensenada'};
+var PAGE=12;
+
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function norm(s){return String(s||'').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().trim()}
+function initials(n){var p=String(n).split(/\s+/).filter(Boolean);return ((p[0]||'')[0]||'')+((p[1]||'')[0]||'')}
+var BYNAME={};TEAM.forEach(function(t){BYNAME[norm(t.name)]=t});
+
+function tagFor(p){return p.pre?'<span class="tag pre">Preventa</span>':p.op==='renta'?'<span class="tag rent">En renta</span>':'<span class="tag">En venta</span>'}
+function priceHtml(p,cls){
+  if(!p.price)return '<div class="'+(cls||'price')+' ask">Consultar precio</div>';
+  return '<div class="'+(cls||'price')+'">'+esc(p.price)+(p.per?' <small>'+esc(p.per)+'</small>':'')+'</div>';
+}
+function card(p){
+  return '<a class="card" href="#/propiedad/'+p.id+'"><div class="img">'+tagFor(p)+'<img loading="lazy" alt="'+esc(p.title)+'" src="'+esc(p.img)+'" onerror="this.style.visibility=\'hidden\'"></div>'+
+  '<div class="body">'+priceHtml(p)+'<h3>'+esc(p.title)+'</h3><div class="meta">'+esc(p.loc)+(p.m2?' · '+esc(p.m2)+' m²':'')+(p.rec?' · '+p.rec+' rec':'')+'</div></div></a>';
+}
+function avatar(t){
+  return '<span class="ava">'+esc(initials(t.name))+(t.img?'<img alt="" src="'+IMG+esc(t.img)+'" onerror="this.remove()">':'')+'</span>';
+}
+
+/* ---------- HOME ---------- */
+var timer=null;
+function home(){
+  var slides=SLIDES.map(function(p,i){return '<div class="slide'+(i===0?' on':'')+'" style="background-image:url(\''+IMG+p.img+'\')"></div>'}).join('');
+  var dots=SLIDES.map(function(p,i){return '<button data-i="'+i+'" class="'+(i===0?'on':'')+'" aria-label="Ir a '+esc(p.n)+'"></button>'}).join('');
+  var feat=["departamento-en-venta-the-landmark-two", "vive-el-estilo-de-vida-costero-que-siempre-sonaste", "departamento-en-venta-ovva-torre-a-zona-urbana-rio-tijuana", "departamentos-en-venta-centro-de-rosarito", "casa-en-renta-colonia-roma-roma", "oficinas-en-venta-ovva-business"].map(function(id){return L.filter(function(x){return x.id===id})[0]}).filter(Boolean);
+  if(feat.length<6)feat=L.slice(0,6);
+  var projs=PROJECTS.map(projCard).join('');
+  return '<section class="hero" style="padding:0"><div class="slides" id="slides">'+slides+
+    '<div class="cap"><div class="wrap"><small id="caplbl">'+esc(SLIDES[0].lbl)+'</small><h2 id="capname">'+esc(SLIDES[0].n)+'</h2></div></div><a class="slidelink" id="slidelink" href="'+slideUrl(SLIDES[0])+'"'+slideTarget(SLIDES[0])+' aria-label="Ver '+esc(SLIDES[0].n)+'"></a>'+
+    '<button class="arrow l" id="prev" aria-label="Anterior">‹</button><button class="arrow r" id="next" aria-label="Siguiente">›</button>'+
+    '<div class="dotrow" id="dots">'+dots+'</div></div>'+
+    '<div class="wrap"><div class="search"><div class="tabs" id="opTabs"><button class="on" data-op="venta">Comprar</button><button data-op="renta">Rentar</button></div>'+
+    '<div class="chiplbl">Tipo</div><div class="chips" id="cKind"><button data-v="casa">Casa</button><button data-v="depa">Departamento</button><button data-v="oficina">Oficina</button><button data-v="edificio">Edificio</button></div>'+
+    '<div class="chiplbl">Zona</div><div class="chips z" id="cZona"><button data-v="tijuana">Tijuana</button><button data-v="costa">Rosarito / Ensenada</button></div>'+
+    '<a class="btn btn-primary btn-block" id="sGo" href="#/propiedades">Ver propiedades</a></div>'+
+    '<div class="stats"><div class="stat"><b>100+</b><span>personas en el equipo</span></div><div class="stat"><b>15+</b><span>años de experiencia</span></div><div class="stat"><b>'+L.length+'</b><span>propiedades en este demo</span></div><div class="stat"><b>10</b><span>proyectos nuevos</span></div></div></div></section>'+
+  '<section style="padding-top:20px"><div class="wrap"><h2 class="sec-title">Explora</h2><p class="sec-sub">Un toque y listo.</p><div class="cats">'+
+    '<a class="cat" href="#/propiedades?kind=casa"><span class="ico">🏡</span><div><b>Casas</b><br><span class="d">En venta y renta</span></div></a>'+
+    '<a class="cat" href="#/propiedades?kind=depa"><span class="ico">🏙️</span><div><b>Departamentos</b><br><span class="d">Condominios y torres</span></div></a>'+
+    '<a class="cat" href="#/propiedades?kind=oficina"><span class="ico">🏢</span><div><b>Oficinas</b><br><span class="d">Locales y consultorios</span></div></a>'+
+    '<a class="cat" href="#/propiedades?kind=edificio"><span class="ico">🏬</span><div><b>Edificios</b><br><span class="d">Inversión y renta</span></div></a>'+
+    '<a class="cat" href="#/propiedades?zona=costa"><span class="ico">🌊</span><div><b>Zona Costa</b><br><span class="d">Rosarito y Ensenada</span></div></a>'+
+    '<a class="cat" href="#/proyectos"><span class="ico">🏗️</span><div><b>Proyectos nuevos</b><br><span class="d">Preventa</span></div></a>'+
+  '</div></div></section>'+
+  '<section style="background:#f7f9fc"><div class="wrap"><div class="row-head"><div><h2 class="sec-title">Propiedades destacadas</h2><p class="sec-sub">Lo más buscado.</p></div><a class="link" href="#/propiedades">Ver todas →</a></div><div class="listings">'+feat.map(card).join('')+'</div></div></section>'+
+  '<section><div class="wrap"><div class="band"><div><h2>¿Quieres vender o rentar tu propiedad?</h2><p>Cuéntanos lo básico y un asesor te contacta hoy.</p></div><a class="btn btn-white" href="#/vender">Quiero vender</a></div></div></section>'+
+  '<section style="padding-top:0"><div class="wrap"><div class="row-head"><div><h2 class="sec-title">Proyectos nuevos</h2><p class="sec-sub">Desarrollos en preventa y construcción.</p></div><a class="link" href="#/proyectos">Ver todos →</a></div><div class="pgrid">'+projs+'</div></div></section>'+
+  contactStrip();
+}
+function slideUrl(s){var nn=s.n==='Créditos'?'Custom Credit':s.n,f=SITES.filter(function(x){return x[0]===nn})[0];return f?f[1]:s.href}
+function slideTarget(s){return /^http/.test(slideUrl(s))?' target="_blank" rel="noopener"':''}
+function projCard(p){return '<a class="proj" href="'+p.url+'" target="_blank" rel="noopener"><img loading="lazy" alt="'+esc(p.n)+'" src="'+IMG+p.img+'"><div class="t"><b>'+esc(p.n)+'</b><span>Visitar</span></div></a>'}
+function contactStrip(){
+  return '<section style="background:var(--blue-soft)"><div class="wrap two"><div><h2 class="sec-title">Hablemos</h2><p class="sec-sub">Un asesor te responde hoy.</p><div style="display:grid;gap:12px;max-width:380px"><a class="btn btn-wa" href="#" data-wa="Hola, me gustaría recibir información y asesoría sobre sus propiedades. ¡Gracias!">Escríbenos por WhatsApp</a><a class="btn btn-primary" href="tel:+526646862120">Llamar al 664 686 2120</a></div></div>'+
+  '<div class="infoblock"><p><b>Oficina</b>Calle Escuadrón 201 #3110-7<br>Zona Río, Tijuana, B.C.</p><p><b>Correo</b><a href="mailto:info@brg.mx">info@brg.mx</a></p><p><b>Redes</b><a href="https://www.instagram.com/brgmexico/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/BustamanteRealtyGroup" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.youtube.com/user/BRGmexico" target="_blank" rel="noopener">YouTube</a></p></div></div></section>';
+}
+function initHome(){
+  var op='venta',cur=0,kind='',zona='';
+  var sl=document.querySelectorAll('#slides .slide'),dt=document.querySelectorAll('#dots button');
+  var nm=document.getElementById('capname'),lb=document.getElementById('caplbl'),ct=document.getElementById('slidelink');
+  function show(i){cur=(i+sl.length)%sl.length;sl.forEach(function(s,k){s.classList.toggle('on',k===cur)});dt.forEach(function(d,k){d.classList.toggle('on',k===cur)});var s=SLIDES[cur];nm.textContent=s.n;lb.textContent=s.lbl;ct.href=slideUrl(s);ct.setAttribute('aria-label','Ver '+s.n);if(/^http/.test(ct.href)){ct.target='_blank';ct.rel='noopener'}else{ct.removeAttribute('target')}}
+  function auto(){clearInterval(timer);timer=setInterval(function(){show(cur+1)},5000)}
+  document.getElementById('prev').onclick=function(){show(cur-1);auto()};
+  document.getElementById('next').onclick=function(){show(cur+1);auto()};
+  dt.forEach(function(d){d.onclick=function(){show(+d.dataset.i);auto()}});
+  var el=document.getElementById('slides'),x0=null;
+  el.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+  el.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40){show(cur+(dx<0?1:-1));auto()}x0=null});
+  auto();
+  var go=document.getElementById('sGo');
+  function upd(){var q=['op='+op];if(kind)q.push('kind='+kind);if(zona)q.push('zona='+zona);go.href='#/propiedades?'+q.join('&')}
+  function chips(id,set){
+    var bs=document.querySelectorAll('#'+id+' button');
+    bs.forEach(function(b){b.onclick=function(){var on=b.classList.contains('on');bs.forEach(function(x){x.classList.remove('on')});if(!on)b.classList.add('on');set(on?'':b.dataset.v);upd()}});
+  }
+  chips('cKind',function(v){kind=v});chips('cZona',function(v){zona=v});
+  document.querySelectorAll('#opTabs button').forEach(function(b){b.onclick=function(){op=b.dataset.op;document.querySelectorAll('#opTabs button').forEach(function(x){x.classList.toggle('on',x===b)});upd()}});
+  upd();
+}
+
+/* ---------- LISTINGS ---------- */
+var shown=PAGE,lastKey='',lastRes=[];
+function gridHtml(res,n){
+  var h='<div class="listings">'+res.slice(0,n).map(card).join('')+'</div>';
+  if(n<res.length)h+='<div class="more"><button class="btn btn-ghost" data-more="1">Ver más ('+(res.length-n)+')</button></div>';
+  return h;
+}
+function listings(q){
+  var op=q.get('op')||'',kind=q.get('kind')||'',zona=q.get('zona')||'';
+  var key=op+'|'+kind+'|'+zona;if(key!==lastKey){shown=PAGE;lastKey=key}
+  function href(o){var n={op:op,kind:kind,zona:zona};for(var k in o)n[k]=o[k];var s=[];for(var k2 in n)if(n[k2])s.push(k2+'='+n[k2]);return '#/propiedades'+(s.length?'?'+s.join('&'):'')}
+  var res=L.filter(function(p){return(!op||p.op===op)&&(!kind||p.kind===kind)&&(!zona||p.zona===zona)});
+  lastRes=res;
+  var title=op==='venta'?'Propiedades en venta':op==='renta'?'Propiedades en renta':'Todas las propiedades';
+  var f='<div class="filters"><div class="fgroup"><span class="lbl">Operación</span><a class="f'+(!op?' on':'')+'" href="'+href({op:''})+'">Todas</a><a class="f'+(op==='venta'?' on':'')+'" href="'+href({op:'venta'})+'">Comprar</a><a class="f'+(op==='renta'?' on':'')+'" href="'+href({op:'renta'})+'">Rentar</a></div>'+
+   '<div class="fgroup"><span class="lbl">Tipo</span><a class="f'+(!kind?' on':'')+'" href="'+href({kind:''})+'">Todos</a>'+Object.keys(KINDS).map(function(c){return '<a class="f'+(kind===c?' on':'')+'" href="'+href({kind:c})+'">'+KINDS[c]+'</a>'}).join('')+'</div>'+
+   '<div class="fgroup"><span class="lbl">Zona</span><a class="f'+(!zona?' on':'')+'" href="'+href({zona:''})+'">Todas</a>'+Object.keys(ZONAS).map(function(z){return '<a class="f'+(zona===z?' on':'')+'" href="'+href({zona:z})+'">'+ZONAS[z]+'</a>'}).join('')+'</div></div>';
+  var body=res.length?'<div id="grid">'+gridHtml(res,shown)+'</div>':'<div class="empty"><h3>No encontramos propiedades con esos filtros</h3><p style="margin-bottom:16px;color:var(--muted)">Cuéntanos qué buscas y te ayudamos.</p><a class="btn btn-wa" href="#" data-wa="Hola, busco una propiedad y no encontré lo que necesito en el sitio. ¿Me pueden ayudar?">Hablar con un asesor</a></div>';
+  return '<div class="pagehead"><div class="wrap"><h1>'+title+'</h1><p>'+res.length+(res.length===1?' resultado':' resultados')+'</p>'+f+'</div></div><section style="padding-top:28px"><div class="wrap">'+body+'</div></section>'+
+   '<section style="padding-top:0"><div class="wrap"><div class="band"><div><h2>¿No ves lo que buscas?</h2><p>Tenemos más propiedades que no publicamos. Dinos qué necesitas.</p></div><a class="btn btn-white" href="#" data-wa="Hola, busco una propiedad y me gustaría que me ayuden a encontrarla.">Escribir por WhatsApp</a></div></div></section>';
+}
+
+/* ---------- DETAIL ---------- */
+function detail(id){
+  var p=L.filter(function(x){return x.id===id})[0];
+  if(!p)return '<div class="wrap" style="padding:80px 20px"><h2>Propiedad no encontrada</h2><p style="margin:12px 0 20px"><a class="btn btn-primary" href="#/propiedades">Ver propiedades</a></p></div>';
+  var specs='';
+  if(p.rec)specs+='<div class="spec"><b>'+p.rec+'</b><span>Recámaras</span></div>';
+  if(p.ban)specs+='<div class="spec"><b>'+p.ban+'</b><span>Baños</span></div>';
+  if(p.m2)specs+='<div class="spec"><b>'+esc(p.m2)+'</b><span>m²</span></div>';
+  var ag=p.agent?BYNAME[norm(p.agent)]:null;
+  var to=ag&&ag.tel?ag.tel.replace('+',''):WA;
+  var msg='Hola'+(ag?' '+ag.name.split(' ')[0]:'')+', me interesa esta propiedad: '+p.title+' ('+p.loc+')'+(p.price?', '+p.price+(p.per?' '+p.per:''):'')+'. ¿Me pueden dar más información?';
+  var sim=L.filter(function(x){return x.id!==p.id&&(x.kind===p.kind||x.zona===p.zona)}).slice(0,3).map(card).join('');
+  var agentHtml=p.agent?'<div class="agent">'+(ag?avatar(ag):'<span class="ava">'+esc(initials(p.agent))+'</span>')+'<div><b>'+esc(p.agent)+'</b><br><span class="sm">'+(ag?esc(ag.role):'Asesor')+'</span></div></div>':'';
+  var map=(p.lat&&p.lng)?'<p style="margin-top:10px"><a class="link" target="_blank" rel="noopener" href="https://www.google.com/maps?q='+p.lat+','+p.lng+'">📍 Ver ubicación en el mapa</a></p>':'';
+  return '<div class="wrap"><a class="crumb" href="javascript:history.back()">← Volver</a><div class="detail"><div>'+
+    '<div class="dimg">'+tagFor(p)+'<img alt="'+esc(p.title)+'" src="'+esc(p.img)+'" onerror="this.style.visibility=\'hidden\'"></div>'+
+    '<div style="margin-top:20px">'+priceHtml(p,'dprice')+'<h1 style="font-size:clamp(1.5rem,4.5vw,2rem);margin:6px 0 4px">'+esc(p.title)+'</h1><p style="color:var(--muted)">📍 '+esc(p.loc)+'</p>'+(specs?'<div class="specs">'+specs+'</div>':'')+map+
+    '<p style="color:var(--muted);margin-top:14px">'+esc(p.label)+'. Pide al asesor fotos adicionales, ubicación exacta y documentos.</p></div></div>'+
+    '<aside class="panel"><h3>¿Te interesa?</h3>'+agentHtml+'<a class="btn btn-wa btn-block" href="#" data-wa="'+esc(msg)+'" data-to="'+to+'">Preguntar por WhatsApp</a><a class="btn btn-ghost btn-block" href="tel:'+(ag&&ag.tel?ag.tel:'+526646862120')+'">Llamar</a>'+
+    '<form data-form="visit" data-to="'+to+'" data-prop="'+esc(p.title)+'" style="display:grid;gap:10px;margin-top:6px"><p class="sm" style="margin-top:6px">O déjanos tus datos:</p><input name="nombre" placeholder="Tu nombre" required><input name="tel" type="tel" placeholder="Tu teléfono" required><button class="btn btn-primary btn-block" type="submit">Quiero agendar una visita</button></form></aside></div>'+
+    (sim?'<h2 class="sec-title" style="margin-top:8px">Propiedades similares</h2><div class="listings" style="padding-bottom:56px">'+sim+'</div>':'')+'</div>';
+}
+
+/* ---------- PROJECTS ---------- */
+var SITES=[
+ ['The Landmark','https://thelandmarktijuana.com/'],['Adamant','https://adamant.mx/grand-tijuana-toreo/'],['Luca Condos','https://www.brg.mx/luca/'],['OVVA Residences','https://www.brg.mx/ovva/'],
+ ['PORTTICA','https://porttica.com/'],['Bitte','https://bittetijuana.mx/'],['The Wavve','https://www.thewavvebaja.com/'],['NAOS Resort Living','https://www.naosresortliving.com/'],
+ ['Monterra Park','https://monterra.mx'],['Sideways Living','https://www.brg.mx/sideways/'],['Camino Thompson','https://caminothompson.mx/'],['Central de Condominios','https://www.centraldecondominios.mx'],
+ ['Custom Credit','https://customcredit.mx/'],['Yo Quiero Vender','https://yoquierovender.mx/'],['Revista Mundo BRG','https://mundobrg.com/'],['Revista TJ Metro','https://tijuanametropolitana.com/']
+];
+function sitesHtml(){
+  return '<h2 class="sec-title" style="margin-top:40px">Todos nuestros sitios</h2><p class="sec-sub">Cada proyecto tiene su propio sitio.</p><div class="pills">'+SITES.map(function(x){return '<a href="'+x[1]+'" target="_blank" rel="noopener">'+esc(x[0])+' ↗</a>'}).join('')+'</div>';
+}
+
+function projects(){
+  return '<div class="pagehead"><div class="wrap"><h1>Proyectos nuevos</h1><p>Departamentos y desarrollos en preventa y construcción.</p></div></div><section style="padding-top:28px"><div class="wrap"><div class="pgrid">'+PROJECTS.map(projCard).join('')+'</div>'+
+  '<div class="two" style="margin-top:32px"><div class="formcard"><h3>Mapa de todos los proyectos</h3><p style="color:var(--muted)">Compara ubicación y precios en un solo lugar.</p><a class="btn btn-primary" href="https://www.centraldecondominios.mx" target="_blank" rel="noopener">Ver Central de Condominios</a></div><div class="formcard"><h3>¿Necesitas crédito?</h3><p style="color:var(--muted)">Te ayudamos a encontrar la mejor opción de financiamiento.</p><a class="btn btn-ghost" href="https://customcredit.mx/" target="_blank" rel="noopener">Ver opciones de crédito</a></div></div>'+sitesHtml()+'</div></section>'+contactStrip();
+}
+
+/* ---------- TEAM ---------- */
+var tDiv='',tQ='';
+function rebuild(){
+  var q=norm(tQ),groups=[],cur=null;
+  TEAM.forEach(function(t){
+    if(tDiv&&t.div!==tDiv)return;
+    if(q&&norm(t.name+' '+t.role+' '+t.div).indexOf(q)<0)return;
+    if(!cur||cur.d!==t.div){cur={d:t.div,items:[]};groups.push(cur)}
+    cur.items.push(t);
+  });
+  if(!groups.length)return '<div class="empty"><h3>No encontramos a nadie con esa búsqueda</h3></div>';
+  return groups.map(function(g){
+    return '<h3 class="divh">'+esc(g.d)+'</h3><div class="tgrid">'+g.items.map(function(t){
+      var wa=t.tel?'https://wa.me/'+t.tel.replace('+',''):'';
+      return '<div class="tcard"><div class="who">'+avatar(t)+'<div><b>'+esc(t.name)+'</b><span class="r">'+esc(t.role)+'</span></div></div><div class="acts">'+
+        (t.tel?'<a class="btn btn-wa btn-sm" target="_blank" rel="noopener" href="'+wa+'">WhatsApp</a><a class="btn btn-ghost btn-sm" href="tel:'+t.tel+'">'+esc(t.tel_fmt||'Llamar')+'</a>':'')+
+        (t.email?'<a class="btn btn-ghost btn-sm" href="mailto:'+esc(t.email)+'">Correo</a>':'')+'</div></div>';
+    }).join('')+'</div>';
+  }).join('');
+}
+function team(){
+  var divs=[];TEAM.forEach(function(t){if(divs.indexOf(t.div)<0)divs.push(t.div)});
+  tDiv='';tQ='';
+  return '<div class="pagehead"><div class="wrap"><h1>Nuestro equipo</h1><p>Habla directo con la persona correcta.</p>'+
+    '<div style="margin-top:16px;max-width:520px"><input id="tsearch" type="search" placeholder="Buscar persona o área" autocomplete="off"></div>'+
+    '<div class="scroller" id="tdivs"><button class="f on" data-d="">Todos</button>'+divs.map(function(d){return '<button class="f" data-d="'+esc(d)+'">'+esc(d)+'</button>'}).join('')+'</div></div></div>'+
+    '<section style="padding-top:8px"><div class="wrap" id="tlist">'+rebuild()+'</div></section>';
+}
+
+/* ---------- SELL ---------- */
+function sell(){
+  return '<div class="pagehead"><div class="wrap"><h1>Vende o renta tu propiedad</h1><p>Cuéntanos lo básico. Un asesor te contacta hoy.</p></div></div><section style="padding-top:28px"><div class="wrap two"><form class="formcard" data-form="sell"><div><label>¿Qué quieres hacer?</label><select name="op"><option>Vender</option><option>Rentar</option></select></div><div><label>Tipo de propiedad</label><select name="tipo"><option>Casa</option><option>Departamento</option><option>Terreno</option><option>Oficina o local</option><option>Edificio</option><option>Bodega o nave</option><option>Otro</option></select></div><div><label>Colonia o zona</label><input name="zona" placeholder="Ej. Zona Río, Tijuana" required></div><div><label>Tu nombre</label><input name="nombre" placeholder="Nombre" required></div><div><label>Tu teléfono</label><input name="tel" type="tel" placeholder="664 000 0000" required></div><button class="btn btn-primary btn-block" type="submit">Enviar por WhatsApp</button></form>'+
+  '<div><h2 class="sec-title">Así de fácil</h2><div class="steps"><div class="step"><i>1</i><div><b>Nos cuentas</b><br><span style="color:var(--muted)">Tipo de propiedad y zona. Nada más.</span></div></div><div class="step"><i>2</i><div><b>Un asesor te contacta</b><br><span style="color:var(--muted)">Te orienta con precio y estrategia.</span></div></div><div class="step"><i>3</i><div><b>Promovemos tu propiedad</b><br><span style="color:var(--muted)">La mostramos a compradores e inversionistas.</span></div></div></div></div></div></section>';
+}
+
+/* ---------- CONTACT ---------- */
+function contact(){
+  return '<div class="pagehead"><div class="wrap"><h1>Contacto</h1><p>Elige la forma más fácil para ti.</p></div></div><section style="padding-top:28px"><div class="wrap two"><div style="display:grid;gap:14px;align-content:start"><a class="btn btn-wa btn-block" href="#" data-wa="Hola, me gustaría recibir información y asesoría sobre sus propiedades. ¡Gracias!">Escríbenos por WhatsApp</a><a class="btn btn-primary btn-block" href="tel:+526646862120">Llamar 664 686 2120</a><a class="btn btn-ghost btn-block" href="mailto:info@brg.mx">info@brg.mx</a>'+
+  '<div class="infoblock" style="margin-top:12px"><p><b>Oficina</b>Calle Escuadrón 201 #3110-7<br>Zona Río, Tijuana, B.C.</p><p><b>Redes</b><a href="https://www.instagram.com/brgmexico/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/BustamanteRealtyGroup" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.youtube.com/user/BRGmexico" target="_blank" rel="noopener">YouTube</a></p></div></div>'+
+  '<form class="formcard" data-form="contact"><h3>Déjanos tu mensaje</h3><input name="nombre" placeholder="Tu nombre" required><input name="tel" type="tel" placeholder="Tu teléfono" required><textarea name="msg" placeholder="¿Qué estás buscando?"></textarea><button class="btn btn-primary btn-block" type="submit">Enviar por WhatsApp</button></form></div></section>';
+}
+
+/* ---------- ROUTER ---------- */
+var app=document.getElementById('app');
+function setNav(k){document.querySelectorAll('nav.desktop a').forEach(function(a){a.classList.toggle('on',a.dataset.nav===k)})}
+function route(){
+  clearInterval(timer);
+  var h=location.hash.slice(1)||'/';
+  var parts=h.split('?'),path=parts[0],q=new URLSearchParams(parts[1]||'');
+  var nav='';
+  if(path==='/'||path===''){app.innerHTML=home();initHome()}
+  else if(path==='/propiedades'){app.innerHTML=listings(q);nav=q.get('op')==='renta'?'rentar':'comprar'}
+  else if(path.indexOf('/propiedad/')===0){app.innerHTML=detail(path.split('/')[2])}
+  else if(path==='/proyectos'){app.innerHTML=projects();nav='proyectos'}
+  else if(path==='/equipo'){app.innerHTML=team();nav='equipo'}
+  else if(path==='/vender'){app.innerHTML=sell();nav='vender'}
+  else if(path==='/contacto'){app.innerHTML=contact();nav='contacto'}
+  else{app.innerHTML=home();initHome()}
+  setNav(nav);closeMenu();window.scrollTo(0,0);
+}
+window.addEventListener('hashchange',route);
+
+document.addEventListener('click',function(e){
+  var a=e.target.closest('[data-wa]');
+  if(a){e.preventDefault();window.open(wa(a.getAttribute('data-wa'),a.getAttribute('data-to')),'_blank');return}
+  var m=e.target.closest('[data-more]');
+  if(m){shown+=PAGE;document.getElementById('grid').innerHTML=gridHtml(lastRes,shown);return}
+  var d=e.target.closest('#tdivs [data-d]');
+  if(d){tDiv=d.getAttribute('data-d');document.querySelectorAll('#tdivs .f').forEach(function(x){x.classList.toggle('on',x===d)});document.getElementById('tlist').innerHTML=rebuild()}
+});
+document.addEventListener('input',function(e){
+  if(e.target.id==='tsearch'){tQ=e.target.value;document.getElementById('tlist').innerHTML=rebuild()}
+});
+document.addEventListener('submit',function(e){
+  var f=e.target.closest('form[data-form]');if(!f)return;
+  e.preventDefault();
+  var d=new FormData(f),t=f.dataset.form,m='';
+  if(t==='visit')m='Hola, soy '+d.get('nombre')+'. Quiero agendar una visita para: '+f.dataset.prop+'. Mi teléfono: '+d.get('tel')+'.';
+  if(t==='sell')m='Hola, soy '+d.get('nombre')+'. Quiero '+d.get('op').toLowerCase()+' mi propiedad ('+d.get('tipo').toLowerCase()+') en '+d.get('zona')+'. Mi teléfono: '+d.get('tel')+'.';
+  if(t==='contact')m='Hola, soy '+d.get('nombre')+'. '+(d.get('msg')||'Me gustaría recibir información.')+' Mi teléfono: '+d.get('tel')+'.';
+  window.open(wa(m,f.dataset.to),'_blank');
+});
+var menu=document.getElementById('menu');
+function closeMenu(){menu.classList.remove('open');document.body.style.overflow=''}
+document.getElementById('openMenu').onclick=function(){menu.classList.add('open');document.body.style.overflow='hidden'};
+document.getElementById('closeMenu').onclick=closeMenu;
+route();
+})();
+</script>
+</body>
+</html>
