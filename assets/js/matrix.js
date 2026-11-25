@@ -114,11 +114,6 @@
 		matrixActive = true;
 		canvas.style.display = 'block';
 		document.body.classList.add('matrix-mode');
-		// Re-trigger header logo animation (appear from middle)
-		document.body.classList.add('is-preload');
-		setTimeout(function() {
-			document.body.classList.remove('is-preload');
-		}, 150);
 		animate();
 	}
 
@@ -143,13 +138,31 @@
 		document.body.classList.remove('matrix-mode');
 	}
 
-	// Toggle function
+	// Toggle: close the header, swap theme while closed, reopen
+	var switching = false;
+
 	window.toggleMatrix = function() {
-		if (matrixActive) {
-			stopMatrix();
-		} else {
-			startMatrix();
+		if (switching) return;
+		var body = document.body;
+
+		// Skip the animation while an article is open (header is hidden)
+		if (body.classList.contains('is-article-visible')) {
+			matrixActive ? stopMatrix() : startMatrix();
+			return;
 		}
+
+		switching = true;
+		body.classList.add('is-closing');
+
+		setTimeout(function() {
+			matrixActive ? stopMatrix() : startMatrix();
+			body.classList.add('is-preload');
+			body.classList.remove('is-closing');
+			setTimeout(function() {
+				body.classList.remove('is-preload');
+				setTimeout(function() { switching = false; }, 900);
+			}, 150);
+		}, 950);
 	};
 
 })();
