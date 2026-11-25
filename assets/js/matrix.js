@@ -156,14 +156,25 @@
 		if (switching) return;
 		var body = document.body;
 
-		// Skip the animation while an article is open (header is hidden)
-		if (body.classList.contains('is-article-visible')) {
-			matrixActive ? stopMatrix() : startMatrix();
-			return;
-		}
-
 		switching = true;
 
+		// If a popup (intro / work / contact) is open, close it first, then run the theme animation
+		if (body.classList.contains('is-article-visible')) {
+			var btn = document.querySelector('#main article.active .close');
+			if (btn) btn.click(); else window.location.hash = '';
+			var waited = 0;
+			var poll = setInterval(function() {
+				waited += 50;
+				if (!body.classList.contains('is-article-visible') || waited > 2000) {
+					clearInterval(poll);
+					setTimeout(runSwitch, 450);
+				}
+			}, 50);
+			return;
+		}
+		runSwitch();
+
+		function runSwitch() {
 		var dim = document.getElementById('theme-dim');
 		if (!dim) {
 			dim = document.createElement('div');
@@ -191,6 +202,7 @@
 				setTimeout(function() { switching = false; }, 900);
 			}, 1000);
 		}, 900);
+		}
 	};
 
 })();
