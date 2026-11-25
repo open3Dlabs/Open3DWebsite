@@ -7,6 +7,7 @@
 	'use strict';
 
 	var matrixActive = false;
+	var fading = false;
 	var canvas = null;
 	var ctx = null;
 	var animationId = null;
@@ -28,7 +29,7 @@
 		canvas.style.zIndex = '2'; // Behind content but above background
 		canvas.style.pointerEvents = 'none';
 		canvas.style.display = 'none';
-		canvas.style.opacity = '0.3'; // Make it subtle so website content is visible
+		canvas.style.opacity = '0';
 		document.body.appendChild(canvas);
 
 		ctx = canvas.getContext('2d');
@@ -57,7 +58,7 @@
 	}
 
 	function animate() {
-		if (!matrixActive || !ctx) return;
+		if ((!matrixActive && !fading) || !ctx) return;
 
 		// Clear canvas with slight fade effect
 		ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
@@ -112,8 +113,12 @@
 	}
 
 		matrixActive = true;
+		fading = false;
 		canvas.style.display = 'block';
+		void canvas.offsetWidth;
+		canvas.style.opacity = '0.3';
 		document.body.classList.add('matrix-mode');
+		if (animationId) cancelAnimationFrame(animationId);
 		animate();
 	}
 
@@ -121,12 +126,18 @@
 		if (!matrixActive) return;
 		
 		matrixActive = false;
-		if (animationId) {
-			cancelAnimationFrame(animationId);
-			animationId = null;
-		}
+		fading = true;
 		if (canvas) {
-			canvas.style.display = 'none';
+			canvas.style.opacity = '0';
+			setTimeout(function() {
+				if (matrixActive) return;
+				fading = false;
+				if (animationId) {
+					cancelAnimationFrame(animationId);
+					animationId = null;
+				}
+				canvas.style.display = 'none';
+			}, 1300);
 		}
 
 	// Restore original logo
@@ -161,8 +172,8 @@
 			setTimeout(function() {
 				body.classList.remove('is-preload');
 				setTimeout(function() { switching = false; }, 900);
-			}, 150);
-		}, 950);
+			}, 1000);
+		}, 850);
 	};
 
 })();

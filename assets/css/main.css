@@ -1436,7 +1436,6 @@ body.matrix-mode #bg {
 
 body.matrix-mode #bg:before,
 body.matrix-mode #bg:after {
-	background: #000000 !important;
 	opacity: 0 !important;
 }
 
@@ -1786,4 +1785,28 @@ body.matrix-mode .wl-i {
 
 body.matrix-mode .wl a:hover .wl-i {
 	background: rgba(0,255,65,.15) !important;
+}
+
+
+/* Smooth theme fade */
+
+body {
+	transition: background-color 1s ease;
+}
+
+#bg:before, #bg:after {
+	transition: opacity 1s ease, background-color 0.5s ease-in-out;
+}
+
+#matrix-canvas {
+	transition: opacity 1.2s ease;
+}
+
+.wl-i svg {
+	display: block;
+}
+
+.wl {
+	width: 100%;
+	text-align: center;
 }
