@@ -26,7 +26,7 @@
 		canvas.style.left = '0';
 		canvas.style.width = '100%';
 		canvas.style.height = '100%';
-		canvas.style.zIndex = '2'; // Behind content but above background
+		canvas.style.zIndex = '1'; // Behind content but above background
 		canvas.style.pointerEvents = 'none';
 		canvas.style.display = 'none';
 		canvas.style.opacity = '0';
@@ -163,17 +163,34 @@
 		}
 
 		switching = true;
+
+		var dim = document.getElementById('theme-dim');
+		if (!dim) {
+			dim = document.createElement('div');
+			dim.id = 'theme-dim';
+			body.appendChild(dim);
+		}
+		dim.classList.remove('out');
+		void dim.offsetWidth;
+
+		// 1. Close the header and dim the page to black
 		body.classList.add('is-closing');
+		dim.classList.add('on');
 
 		setTimeout(function() {
+			// 2. Fully black: swap the theme underneath
 			matrixActive ? stopMatrix() : startMatrix();
 			body.classList.add('is-preload');
 			body.classList.remove('is-closing');
+			dim.classList.add('out');
+			dim.classList.remove('on');
+
 			setTimeout(function() {
+				// 3. Reopen the header on the new theme
 				body.classList.remove('is-preload');
 				setTimeout(function() { switching = false; }, 900);
 			}, 1000);
-		}, 850);
+		}, 900);
 	};
 
 })();

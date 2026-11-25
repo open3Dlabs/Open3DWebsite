@@ -1782,12 +1782,25 @@ body.matrix-mode .wl a:hover .wl-i {
 
 /* Smooth theme fade */
 
-body {
-	transition: background-color 1s ease;
+#theme-dim {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: 0;
+	pointer-events: none;
+	z-index: 2;
+	transition: opacity .85s ease-in-out;
 }
 
-#bg:before, #bg:after {
-	transition: opacity 1s ease, background-color 0.5s ease-in-out;
+#theme-dim.on {
+	opacity: 1;
+}
+
+#theme-dim.out {
+	transition-duration: 1s;
 }
 
 #matrix-canvas {
@@ -1891,4 +1904,8 @@ body.matrix-mode #main article .close.pressed:before {
 		top: .25rem;
 		right: .25rem;
 	}
+}
+
+body.is-preload #theme-dim {
+	transition: opacity 1s ease-in-out !important;
 }
