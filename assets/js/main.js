@@ -341,4 +341,9 @@
 						$main._show(location.hash.substr(1), true);
 					});
 
+	// Close button press feedback (touch and mouse)
+		$(document)
+			.on('pointerdown', '.close', function() { $(this).addClass('pressed'); })
+			.on('pointerup pointercancel pointerleave', '.close', function() { var t = this; setTimeout(function() { $(t).removeClass('pressed'); }, 150); });
+
 })(jQuery);
