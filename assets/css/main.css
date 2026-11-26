@@ -1931,7 +1931,7 @@ body.matrix-mode #matrix-toggle {
 
 body.matrix-mode #matrix-toggle {
 	background: #fff !important;
-	border-color: #000 !important;
+	border-color: rgb(117, 179, 204) !important;
 	box-shadow: none !important;
 	animation: none !important;
 }
