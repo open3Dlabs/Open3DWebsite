@@ -1909,3 +1909,20 @@ body.matrix-mode #main article .close.pressed:before {
 body.is-preload #theme-dim {
 	transition: opacity 1s ease-in-out !important;
 }
+
+
+/* Matrix button: tiny cascade inside a black circle */
+
+#matrix-toggle,
+body.matrix-mode #matrix-toggle {
+	background: #000 !important;
+	overflow: hidden;
+}
+
+#matrix-toggle-rain {
+	display: block;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	pointer-events: none;
+}

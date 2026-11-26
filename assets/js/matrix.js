@@ -205,4 +205,32 @@
 		}
 	};
 
+	// Tiny cascade inside the toggle button
+	(function() {
+		var cv = document.getElementById('matrix-toggle-rain');
+		if (!cv) return;
+		var g = cv.getContext('2d');
+		var W = cv.width, H = cv.height, fs = 14, cols = Math.floor(W / (fs * 0.8));
+		var chars = '01ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿ'.split('');
+		var drops = [];
+		for (var i = 0; i < cols; i++) drops.push(Math.random() * -20);
+		g.fillStyle = '#000';
+		g.fillRect(0, 0, W, H);
+		g.font = fs + 'px monospace';
+		setInterval(function() {
+			if (document.hidden) return;
+			g.fillStyle = 'rgba(0,0,0,0.12)';
+			g.fillRect(0, 0, W, H);
+			for (var i = 0; i < cols; i++) {
+				var x = i * fs * 0.8, y = drops[i] * fs;
+				g.fillStyle = '#d8ffe3';
+				g.fillText(chars[Math.floor(Math.random() * chars.length)], x, y);
+				g.fillStyle = '#00ff41';
+				g.fillText(chars[Math.floor(Math.random() * chars.length)], x, y - fs);
+				if (y > H && Math.random() > 0.95) drops[i] = 0;
+				drops[i] += 0.5;
+			}
+		}, 60);
+	})();
+
 })();
