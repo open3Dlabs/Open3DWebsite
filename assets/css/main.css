@@ -1947,3 +1947,15 @@ body.matrix-mode #matrix-toggle-rain {
 #matrix-toggle-rain {
 	transition: opacity .6s ease;
 }
+
+/* Matrix button: slow fade between both looks */
+
+#matrix-toggle,
+body.is-preload #matrix-toggle {
+	transition: background-color 1.2s ease, border-color 1.2s ease, box-shadow 1.2s ease, transform .3s ease !important;
+}
+
+#matrix-toggle-rain,
+body.is-preload #matrix-toggle-rain {
+	transition: opacity 1.2s ease !important;
+}

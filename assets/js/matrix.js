@@ -211,7 +211,7 @@
 		if (!cv) return;
 		var g = cv.getContext('2d');
 		var W = cv.width, H = cv.height, fs = 14, cols = Math.floor(W / (fs * 0.8));
-		var chars = '01ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿ'.split('');
+		var chars = ['0', '1'];
 		var drops = [];
 		for (var i = 0; i < cols; i++) drops.push(Math.random() * -20);
 		g.fillStyle = '#000';
