@@ -1926,3 +1926,24 @@ body.matrix-mode #matrix-toggle {
 	border-radius: 50%;
 	pointer-events: none;
 }
+
+/* Matrix theme: button flips to a black outline with a white inside */
+
+body.matrix-mode #matrix-toggle {
+	background: #fff !important;
+	border-color: #000 !important;
+	box-shadow: none !important;
+	animation: none !important;
+}
+
+body.matrix-mode #matrix-toggle:hover {
+	background: #e8e8e8 !important;
+}
+
+body.matrix-mode #matrix-toggle-rain {
+	opacity: 0;
+}
+
+#matrix-toggle-rain {
+	transition: opacity .6s ease;
+}
